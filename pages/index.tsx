@@ -18,17 +18,21 @@ export const supabase = createClient(
 export default function Home() {
   return (
     <div className=" bg-white">
-      <HeaderNavBar />
+      <div className="sticky top-0 z-20">
+        <HeaderNavBar />
+      </div>
       <PromoCarousel />
       <LastModelPanel />
       <Image alt="shoes-image" src={logo} />
-      <ProductsCarousel />
-      <p className="px-6 pt-6 text-2xl ">Esclusive SNKRS</p>
-      <ProductsCarousel />
-      <p className="px-6 pt-6 text-2xl ">Altri articoli</p>
-      <ProductsCarousel />
-      <p className="px-6 pt-6 text-2xl ">Acquista per sport</p>
-      <ProductsCarousel />
+      <div className="p-6 space-y-2">
+        <ProductsCarousel />
+        <p className=" pt-12 text-2xl ">Esclusive SNKRS</p>
+        <ProductsCarousel />
+        <p className=" pt-12 text-2xl ">Altri articoli</p>
+        <ProductsCarousel />
+        <p className=" pt-12 text-2xl ">Acquista per sport</p>
+        <ProductsCarousel />
+      </div>
       <FooterComponent />
     </div>
   );

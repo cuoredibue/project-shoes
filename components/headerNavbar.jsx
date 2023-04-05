@@ -5,7 +5,7 @@ import MobileMenuButton from "../components/MobileMenuButton";
 
 const HeaderNavBar = () => {
   return (
-    <div className="sticky top-0 z-20  h-12 bg-white flex justify-between items-center px-2">
+    <div className="  h-12 bg-white flex justify-between items-center px-2">
       <Link href="/" className="font-bold hover:text-gray-600">
         CHE SCARPA!
       </Link>
