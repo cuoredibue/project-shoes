@@ -17,14 +17,11 @@ export const supabase = createClient(
 
 export default function Home() {
   return (
-    <div className="h-screen bg-white">
+    <div className=" bg-white">
       <HeaderNavBar />
-
       <PromoCarousel />
-
       <LastModelPanel />
       <Image alt="shoes-image" src={logo} />
-
       <ProductsCarousel />
       <p className="px-6 pt-6 text-2xl ">Esclusive SNKRS</p>
       <ProductsCarousel />
