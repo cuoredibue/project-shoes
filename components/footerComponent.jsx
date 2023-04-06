@@ -43,7 +43,7 @@ const FooterComponent = () => {
             ))}
         </div>
         {whichMenuIsOpen === 1 && (
-          <div className="animate-[enterFromTop_300ms] space-y-3 text-sm text-gray-500 ">
+          <div className="animate-[enterFromTop_200ms] space-y-3 text-sm text-gray-500 ">
             <p>Stato dell'ordine</p>
             <p>Spedizione e consegna</p>
             <p>Resi</p>
