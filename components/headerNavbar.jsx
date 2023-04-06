@@ -10,12 +10,24 @@ const HeaderNavBar = () => {
         CHE SCARPA!
       </Link>
       <div className=" space-x-3">
-        <button className="hover:bg-gray-200 focus:bg-slate-200 rounded-full h-8 w-8">
+        <Link
+          href={{
+            pathname: "/checkout/orderAndPay",
+            query: { title: "pay" },
+          }}
+          className="hover:bg-gray-200 focus:bg-slate-200 rounded-full h-8 w-8"
+        >
           <ShoppingBagOutlinedIcon />
-        </button>
-        <button className="hover:bg-gray-200 rounded-full h-8 w-8">
+        </Link>
+        <Link
+          href={{
+            pathname: "/search/findYourArticle",
+            query: { title: "find" },
+          }}
+          className="hover:bg-gray-200 rounded-full h-8 w-8"
+        >
           <SearchIcon />
-        </button>
+        </Link>
         <MobileMenuButton />
       </div>
     </div>

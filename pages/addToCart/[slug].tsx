@@ -1,7 +1,7 @@
 import HeaderNavBar from "@/components/headerNavbar";
 import PromoCarousel from "@/components/promoCarouselTopBar";
 import FooterComponent from "@/components/footerComponent";
-import BottomMenuExtraInfo from "../../components/addToCardButtomInfo";
+import BottomMenuExtraInfo from "../../components/addToCardBottomInfo";
 
 const AddToCart = () => {
   const availableSizeList = [

@@ -5,11 +5,8 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { useState } from "react";
 
 const FooterComponent = () => {
-  const [whichMenuIsOpen, setWhichOpen] = useState(0);
+  const [whichMenuIsOpen, setWhichOpen] = useState(null);
 
-  const handleMenu = (num) => {
-    setWhichOpen(num);
-  };
   return (
     <div className="bg-black text-white text-sm px-4 py-8 space-y-8">
       <div className="space-y-4">
@@ -26,20 +23,22 @@ const FooterComponent = () => {
           {(whichMenuIsOpen !== 1 && (
             <button
               onClick={() => {
-                handleMenu(1);
+                setWhichOpen(1);
               }}
             >
               +
             </button>
           )) ||
             (whichMenuIsOpen === 1 && (
-              <button
-                onClick={() => {
-                  handleMenu(0);
-                }}
-              >
-                -
-              </button>
+              <div>
+                <button
+                  onClick={() => {
+                    setWhichOpen(null);
+                  }}
+                >
+                  -
+                </button>
+              </div>
             ))}
         </div>
         {whichMenuIsOpen === 1 && (
@@ -57,7 +56,7 @@ const FooterComponent = () => {
           {(whichMenuIsOpen !== 2 && (
             <button
               onClick={() => {
-                handleMenu(2);
+                setWhichOpen(2);
               }}
             >
               +
@@ -66,7 +65,7 @@ const FooterComponent = () => {
             (whichMenuIsOpen === 2 && (
               <button
                 onClick={() => {
-                  handleMenu(0);
+                  setWhichOpen(null);
                 }}
               >
                 -
@@ -88,7 +87,7 @@ const FooterComponent = () => {
           {(whichMenuIsOpen !== 3 && (
             <button
               onClick={() => {
-                handleMenu(3);
+                setWhichOpen(3);
               }}
             >
               +
@@ -97,7 +96,7 @@ const FooterComponent = () => {
             (whichMenuIsOpen === 3 && (
               <button
                 onClick={() => {
-                  handleMenu(0);
+                  setWhichOpen(null);
                 }}
               >
                 -
