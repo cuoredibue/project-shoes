@@ -2,31 +2,68 @@ import HeaderNavBar from "@/components/headerNavbar";
 import PromoCarousel from "@/components/promoCarouselTopBar";
 import FooterComponent from "@/components/footerComponent";
 import BottomMenuExtraInfo from "../../components/addToCardBottomInfo";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { error } from "console";
+import { supabase } from "..";
+import { useEffect, useState } from "react";
 
 const AddToCart = () => {
+  const router = useRouter();
+  const {
+    model,
+    gender,
+    type,
+    price,
+    img_url,
+    specialty,
+    img2_url,
+    img3_url,
+    img4_url,
+    size,
+  } = router.query;
+
+  const imagesList = [img_url, img2_url, img3_url, img4_url];
   const availableSizeList = [
     36, 36.5, 37, 37.5, 38, 38.5, 39, 40, 40.5, 41, 42, 42.5, 43, 44, 45,
   ];
 
   return (
     <div>
+      <button
+        onClick={() => {
+          console.log(availableSizeList);
+        }}
+      >
+        click
+      </button>
       <div className="sticky top-0 z-20">
         <HeaderNavBar />
       </div>
-
       <PromoCarousel />
       <div className="space-y-2 p-5 font-medium">
-        <p className="text-orange-600">extra descripition</p>
-        <h2 className="text-2xl">Nome Modello</h2>
-        <p>Caratteristica modello</p>
-        <p>prezzo</p>
+        <p className="text-orange-600">{specialty}</p>
+        <h2 className="text-2xl">{model}</h2>
+        <p>Scarpa-{gender}</p>
+        <p>{`${price} €`}</p>
       </div>
-      <div className="h-[36rem] bg-slate-200">carosello prodotto singolo</div>
-      <div className="flex space-x-2 mt-1 ">
-        <div className="h-32 w-32 bg-slate-200 rounded">colore 1</div>
-        <div className="h-32 w-32 bg-slate-200 rounded">colore 2</div>
+      <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
+        {imagesList.map((image, index) => {
+          return (
+            <div key={index} className=" space-y-4 pb-2 snap-center">
+              <div className=" bg-stone-100 sm:h-[30rem] h-[29rem] w-[23.5rem] sm:w-[24rem] ">
+                <Image src={image} width={400} height={400} alt="shoes" />
+              </div>
+            </div>
+          );
+        })}
       </div>
-      <div className="grid grid-cols-3 p-5 gap-2 mt-10">
+      <div className=" flex text-center justify-center mt-5 ">
+        {" "}
+        <p>Seleziona la taglia/misura</p>
+      </div>
+
+      <div className="grid grid-cols-3 p-5 gap-2 ">
         {availableSizeList.map((size, index) => {
           return (
             <button

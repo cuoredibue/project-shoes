@@ -3,11 +3,36 @@ import { title } from "process";
 import Image from "next/image";
 
 const ProductsCarousel = (props) => {
-  const { model, gender, type, price, img_url } = props;
+  const {
+    model,
+    gender,
+    type,
+    price,
+    img_url,
+    specialty,
+    img2_url,
+    img3_url,
+    img4_url,
+    size,
+  } = props;
 
   return (
     <Link
-      href={{ pathname: "/addToCart/model", query: { title: "AirMax3" } }}
+      href={{
+        pathname: "/addToCart/model",
+        query: {
+          model,
+          gender,
+          type,
+          price,
+          img_url,
+          specialty,
+          img2_url,
+          img3_url,
+          img4_url,
+          size,
+        },
+      }}
       className="space-y-4 pb-2 snap-center"
     >
       <div className=" bg-gray-200 sm:h-[30rem] h-[27rem] w-[22rem] sm:w-[24rem] ">

@@ -13,6 +13,7 @@ import FooterComponent from "../components/footerComponent";
 import { useEffect, useState } from "react";
 import { error } from "console";
 import { Category } from "@mui/icons-material";
+import { type } from "os";
 const inter = Inter({ subsets: ["latin"] });
 
 export const supabase = createClient(
@@ -21,18 +22,18 @@ export const supabase = createClient(
 );
 
 export default function Home() {
-  const [allShoes, setAllShoes] = useState([]);
-  const [newModels, setNewModels] = useState([]);
-  const [bestSeller, setBestSeller] = useState([]);
-  const [sneakers, setSneakers] = useState([]);
-  const [running, setRunnig] = useState([]);
+  const [allShoes, setAllShoes] = useState<any>([]);
+  const [newModels, setNewModels] = useState<any[]>([]);
+  const [bestSeller, setBestSeller] = useState<any[]>([]);
+  const [sneakers, setSneakers] = useState<any[]>([]);
+  const [running, setRunnig] = useState<any[]>([]);
   const shoesCategory = ["Sneakers", "Running"];
   const shoesSpecialty = ["Novità", "BestSeller"];
 
   const fetchData = async () => {
     const { data, error } = await supabase.from("scarpe").select();
     if (data) {
-      setAllShoes(data);
+      console.log(data);
     }
     if (error) {
       console.log(error);
@@ -43,7 +44,7 @@ export default function Home() {
     fetchData();
   }, []);
 
-  const filterCategory = async (category) => {
+  const filterCategory = async (category: string) => {
     const { data, error } = await supabase
       .from("scarpe")
       .select()
@@ -71,7 +72,7 @@ export default function Home() {
     setCategory();
   }, []);
 
-  const filterSpecialty = async (specialty) => {
+  const filterSpecialty = async (specialty: string) => {
     const { data, error } = await supabase
       .from("scarpe")
       .select()
@@ -106,13 +107,23 @@ export default function Home() {
       </div>
       <PromoCarousel />
       <LastModelPanel />
-
       <ImageCarousel />
       <div className="p-6 space-y-2">
         <p className=" pt-12 text-2xl ">Novità</p>
         <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
           {newModels.map((item, index) => {
-            const { model, gender, type, price, img_url } = item;
+            const {
+              model,
+              gender,
+              type,
+              price,
+              img_url,
+              img2_url,
+              img3_url,
+              img4_url,
+              specialty,
+              size,
+            } = item;
             return (
               <ProductsCarousel
                 key={index}
@@ -121,6 +132,11 @@ export default function Home() {
                 type={type}
                 price={price}
                 img_url={img_url}
+                specialty={specialty}
+                img2_url={img2_url}
+                img3_url={img3_url}
+                img4_url={img4_url}
+                size={size}
               />
             );
           })}
@@ -128,7 +144,18 @@ export default function Home() {
         <p className=" pt-12 text-2xl ">Bestseller</p>
         <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
           {bestSeller.map((item, index) => {
-            const { model, gender, type, price, img_url } = item;
+            const {
+              model,
+              gender,
+              type,
+              price,
+              img_url,
+              img2_url,
+              img3_url,
+              img4_url,
+              specialty,
+              size,
+            } = item;
             return (
               <ProductsCarousel
                 key={index}
@@ -137,6 +164,11 @@ export default function Home() {
                 type={type}
                 price={price}
                 img_url={img_url}
+                specialty={specialty}
+                img2_url={img2_url}
+                img3_url={img3_url}
+                img4_url={img4_url}
+                size={size}
               />
             );
           })}
@@ -144,7 +176,18 @@ export default function Home() {
         <p className=" pt-12 text-2xl ">Sneakers</p>
         <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
           {sneakers.map((item, index) => {
-            const { model, gender, type, price, img_url } = item;
+            const {
+              model,
+              gender,
+              type,
+              price,
+              img_url,
+              img2_url,
+              img3_url,
+              img4_url,
+              specialty,
+              size,
+            } = item;
             return (
               <ProductsCarousel
                 key={index}
@@ -153,6 +196,11 @@ export default function Home() {
                 type={type}
                 price={price}
                 img_url={img_url}
+                specialty={specialty}
+                img2_url={img2_url}
+                img3_url={img3_url}
+                img4_url={img4_url}
+                size={size}
               />
             );
           })}
@@ -160,7 +208,18 @@ export default function Home() {
         <p className=" pt-12 text-2xl ">Running</p>
         <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
           {running.map((item, index) => {
-            const { model, gender, type, price, img_url } = item;
+            const {
+              model,
+              gender,
+              type,
+              price,
+              img_url,
+              img2_url,
+              img3_url,
+              img4_url,
+              specialty,
+              size,
+            } = item;
             return (
               <ProductsCarousel
                 key={index}
@@ -169,6 +228,11 @@ export default function Home() {
                 type={type}
                 price={price}
                 img_url={img_url}
+                specialty={specialty}
+                img2_url={img2_url}
+                img3_url={img3_url}
+                img4_url={img4_url}
+                size={size}
               />
             );
           })}

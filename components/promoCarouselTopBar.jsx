@@ -15,7 +15,7 @@ const PromoCarousel = () => {
   };
 
   return (
-    <Slider {...settings} className="bg-stone-200  text-center p-2">
+    <Slider {...settings} className="bg-stone-100  text-center p-2">
       <div>
         <p className=" font-semibold">Fino al 30% di sconto</p>
         <p>sono iniziati gli sconti di primavera (link)</p>
