@@ -122,7 +122,7 @@ export default function Home() {
               img3_url,
               img4_url,
               specialty,
-              size,
+              availableSizes,
             } = item;
             return (
               <ProductsCarousel
@@ -136,7 +136,7 @@ export default function Home() {
                 img2_url={img2_url}
                 img3_url={img3_url}
                 img4_url={img4_url}
-                size={size}
+                availableSizes={availableSizes}
               />
             );
           })}
@@ -154,7 +154,7 @@ export default function Home() {
               img3_url,
               img4_url,
               specialty,
-              size,
+              availableSizes,
             } = item;
             return (
               <ProductsCarousel
@@ -168,7 +168,7 @@ export default function Home() {
                 img2_url={img2_url}
                 img3_url={img3_url}
                 img4_url={img4_url}
-                size={size}
+                availableSizes={availableSizes}
               />
             );
           })}
@@ -186,7 +186,7 @@ export default function Home() {
               img3_url,
               img4_url,
               specialty,
-              size,
+              availableSizes,
             } = item;
             return (
               <ProductsCarousel
@@ -200,7 +200,7 @@ export default function Home() {
                 img2_url={img2_url}
                 img3_url={img3_url}
                 img4_url={img4_url}
-                size={size}
+                availableSizes={availableSizes}
               />
             );
           })}
@@ -218,7 +218,7 @@ export default function Home() {
               img3_url,
               img4_url,
               specialty,
-              size,
+              availableSizes,
             } = item;
             return (
               <ProductsCarousel
@@ -232,7 +232,7 @@ export default function Home() {
                 img2_url={img2_url}
                 img3_url={img3_url}
                 img4_url={img4_url}
-                size={size}
+                availableSizes={availableSizes}
               />
             );
           })}
