@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import Image from "next/image";
 
 //components
+import { airMaxPulse } from "../newModels/shoes";
 import ImageCarousel from "../components/imagesCarousel";
 import logo from "../Images/nike.jpg";
 import HeaderNavBar from "../components/headerNavbar";
@@ -22,27 +23,27 @@ export const supabase = createClient(
 );
 
 export default function Home() {
-  const [allShoes, setAllShoes] = useState<any>([]);
+  // const [allShoes, setAllShoes] = useState<any>([]);
   const [newModels, setNewModels] = useState<any[]>([]);
   const [bestSeller, setBestSeller] = useState<any[]>([]);
   const [sneakers, setSneakers] = useState<any[]>([]);
   const [running, setRunnig] = useState<any[]>([]);
   const shoesCategory = ["Sneakers", "Running"];
   const shoesSpecialty = ["Novità", "BestSeller"];
+  const { promoTitle, description } = airMaxPulse;
+  // const fetchData = async () => {
+  //   const { data, error } = await supabase.from("scarpe").select();
+  //   if (data) {
+  //     console.log(data);
+  //   }
+  //   if (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  const fetchData = async () => {
-    const { data, error } = await supabase.from("scarpe").select();
-    if (data) {
-      console.log(data);
-    }
-    if (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   const filterCategory = async (category: string) => {
     const { data, error } = await supabase
@@ -106,11 +107,11 @@ export default function Home() {
         <HeaderNavBar />
       </div>
       <PromoCarousel />
-      <LastModelPanel />
+      <LastModelPanel promoTitle={promoTitle} description={description} />
       <ImageCarousel />
-      <div className="p-6 space-y-2">
-        <p className=" pt-12 text-2xl ">Novità</p>
-        <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
+      <div className="py-6 space-y-2">
+        <p className="pl-4 pt-12 text-2xl ">Novità</p>
+        <div className="flex overflow-auto snap-x snap-mandatory">
           {newModels.map((item, index) => {
             const {
               model,
@@ -141,8 +142,8 @@ export default function Home() {
             );
           })}
         </div>
-        <p className=" pt-12 text-2xl ">Bestseller</p>
-        <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
+        <p className="pl-4  pt-12 text-2xl ">Bestseller</p>
+        <div className="flex overflow-auto snap-x snap-mandatory">
           {bestSeller.map((item, index) => {
             const {
               model,
@@ -173,8 +174,8 @@ export default function Home() {
             );
           })}
         </div>
-        <p className=" pt-12 text-2xl ">Sneakers</p>
-        <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
+        <p className="pl-4  pt-12 text-2xl ">Sneakers</p>
+        <div className="flex overflow-auto snap-x snap-mandatory">
           {sneakers.map((item, index) => {
             const {
               model,
@@ -205,8 +206,8 @@ export default function Home() {
             );
           })}
         </div>
-        <p className=" pt-12 text-2xl ">Running</p>
-        <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
+        <p className="pl-4  pt-12 text-2xl ">Running</p>
+        <div className="flex overflow-auto snap-x snap-mandatory">
           {running.map((item, index) => {
             const {
               model,

@@ -33,7 +33,7 @@ const ProductsCarousel = (props) => {
           availableSizes,
         },
       }}
-      className="space-y-4 pb-2 snap-center"
+      className="space-y-4 pb-2 pl-4 snap-center"
     >
       <div className=" bg-gray-200 sm:h-[30rem] h-[27rem] w-[22rem] sm:w-[24rem] ">
         <Image width={400} height={400} src={img_url} alt="shoes" />

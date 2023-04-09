@@ -17,12 +17,16 @@ const PromoCarousel = () => {
   return (
     <Slider {...settings} className="bg-stone-100  text-center p-2">
       <div>
-        <p className=" font-semibold">Fino al 30% di sconto</p>
-        <p>sono iniziati gli sconti di primavera (link)</p>
+        <p className=" font-semibold">FINO AL 30% DI SCONTO</p>
+        <p className="text-sm font-light">
+          sono iniziati gli sconti di primavera (link)
+        </p>
       </div>
       <div>
-        <p className=" font-semibold">Consegna gratuita</p>
-        <p>i membri del cluba consegna gratuita (link)</p>
+        <p className=" font-semibold">CONSEGNA E RESI GRATUITI</p>
+        <p className="text-sm font-light">
+          i membri del club, consegna e resi gratuiti (link)
+        </p>
       </div>
     </Slider>
   );

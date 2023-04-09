@@ -79,8 +79,15 @@ const MobileMenuButton = () => {
                       <div className="relative mt-10 flex-1 px-6 space-y-4 text-2xl ">
                         <Link
                           href={{
-                            pathname: "/products/buySomething",
-                            query: { title: "novità", item: "scarpe" },
+                            pathname: "/newShoes/all",
+                            query: {
+                              title: "Nuovi Arrivi Nike",
+                              category1: "Uomo",
+                              category2: "Donna",
+                              category3: "Running",
+                              category4: "Snekers",
+                              category5: "Tutte le scarpe",
+                            },
                           }}
                           className="flex justify-between cursor-pointer"
                         >
@@ -90,7 +97,17 @@ const MobileMenuButton = () => {
                           </button>
                         </Link>
                         <Link
-                          href="/products/buySomething"
+                          href={{
+                            pathname: "/manShoes/all",
+                            query: {
+                              title: "Uomo",
+                              category1: "BestSeller",
+                              category2: "Novità",
+                              category3: "Sneakers",
+                              category4: "Running",
+                              category5: "Tutte le scarpe",
+                            },
+                          }}
                           className="flex justify-between cursor-pointer"
                         >
                           <p>Uomo</p>
@@ -99,7 +116,17 @@ const MobileMenuButton = () => {
                           </button>
                         </Link>
                         <Link
-                          href="/products/buySomething"
+                          href={{
+                            pathname: "/womanShoes/all",
+                            query: {
+                              title: "Donna",
+                              category1: "BestSeller",
+                              category2: "Novità",
+                              category3: "Sneakers",
+                              category4: "Running",
+                              category5: "Tutte le scarpe",
+                            },
+                          }}
                           className="flex justify-between cursor-pointer"
                         >
                           <p>Donna</p>
@@ -108,7 +135,17 @@ const MobileMenuButton = () => {
                           </button>
                         </Link>
                         <Link
-                          href="/products/buySomething"
+                          href={{
+                            pathname: "/kidsShoes/all",
+                            query: {
+                              title: "Kids",
+                              category1: "Ragazzi",
+                              category2: "Calcio",
+                              category3: "Basket",
+                              category4: "PrimiPassi",
+                              category5: "Tutte le scarpe",
+                            },
+                          }}
                           className="flex justify-between cursor-pointer"
                         >
                           <p>Bambini</p>
@@ -117,7 +154,16 @@ const MobileMenuButton = () => {
                           </button>
                         </Link>
                         <Link
-                          href="/products/buySomething"
+                          href={{
+                            pathname: "/products/buySomething",
+                            query: {
+                              title: "Kids",
+                              category1: "Ragazzi",
+                              category2: "Calcio",
+                              category3: "Basket",
+                              category4: "PrimiPassi",
+                            },
+                          }}
                           className="flex justify-between cursor-pointer"
                         >
                           <p>Outlet</p>

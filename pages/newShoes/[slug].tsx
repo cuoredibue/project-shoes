@@ -4,7 +4,7 @@ import ProductsSubMenu from "../../components/produtsPageSubMenu";
 import ProductsCarousel from "@/components/productsCarousel";
 import FooterComponent from "@/components/footerComponent";
 import { useRouter } from "next/router";
-const ManShoes = () => {
+const newModels = () => {
   const router = useRouter();
   const { title, category1, category2, category3, category4, category5 } =
     router.query;
@@ -40,4 +40,4 @@ const ManShoes = () => {
   );
 };
 
-export default ManShoes;
+export default newModels;

@@ -13,6 +13,7 @@ const HeaderNavBar = () => {
         <Link
           href={{
             pathname: "/checkout/orderAndPay",
+            query: {},
           }}
           className="hover:bg-gray-200 focus:bg-slate-200 rounded-full h-8 w-8"
         >
