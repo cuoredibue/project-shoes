@@ -15,3 +15,9 @@ export const nikePegasusUomo = {
   description:
     "Scopri la nuova versione della scarpa, approvata da ogni runner per quattro decenni.",
 };
+
+export const airMaxGo = {
+  promoTitle: "AIR PIÙ FACILI DA INDOSSARE",
+  description:
+    "Creata per bambini sempre in movimento. Ora disponibile in nuovi colori.",
+};

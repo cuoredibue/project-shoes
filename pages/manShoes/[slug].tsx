@@ -8,14 +8,9 @@ import { useEffect, useState } from "react";
 import { supabase } from "..";
 import LastModelPanel from "@/components/lastModelPanel";
 import { nikePegasusUomo } from "@/newModels/shoes";
+import Image from "next/image";
 const ManShoes = () => {
   const [allShoes, setAllShoes] = useState<any[]>([]);
-  const [newModels, setNewModels] = useState<any[]>([]);
-  const [bestSeller, setBestSeller] = useState<any[]>([]);
-  const [sneakers, setSneakers] = useState<any[]>([]);
-  const [running, setRunnig] = useState<any[]>([]);
-  const shoesCategory = ["Sneakers", "Running"];
-  const shoesSpecialty = ["Novità", "BestSeller"];
   const { promoTitle, description } = nikePegasusUomo;
   const router = useRouter();
   const { title, category1, category2, category3, category4, category5 } =
@@ -38,66 +33,9 @@ const ManShoes = () => {
     fetchData();
   }, []);
 
-  const filterCategory = async (category: string) => {
-    const { data, error } = await supabase
-      .from("scarpe")
-      .select()
-      .eq("type", category);
-    if (data) {
-      {
-        category === "Sneakers" && setSneakers(data);
-      }
-      {
-        category === "Running" && setRunnig(data);
-      }
-    }
-    if (error) {
-      console.log(error);
-    }
-  };
-
-  const setCategory = () => {
-    shoesCategory.map((item) => {
-      filterCategory(item);
-    });
-  };
-
-  useEffect(() => {
-    setCategory();
-  }, []);
-
-  const filterSpecialty = async (specialty: string) => {
-    const { data, error } = await supabase
-      .from("scarpe")
-      .select()
-      .eq("specialty", specialty);
-    if (data) {
-      {
-        specialty === "Novità" && setNewModels(data);
-      }
-      {
-        specialty === "BestSeller" && setBestSeller(data);
-      }
-    }
-    if (error) {
-      console.log(error);
-    }
-  };
-
-  const setSpecialty = () => {
-    shoesSpecialty.map((item) => {
-      filterSpecialty(item);
-    });
-  };
-
-  useEffect(() => {
-    setSpecialty();
-  }, []);
-
   return (
     <div>
       <HeaderNavBar />
-
       <PromoCarousel />
       <div className="space-y-6 mt-6">
         <div className="space-y-6 sticky top-0 z-30 pt-6 pb-2 px-4  bg-white">
@@ -108,12 +46,23 @@ const ManShoes = () => {
             category3={category3}
             category4={category4}
             category5={category5}
+            gender="Uomo"
           />
         </div>
-        <LastModelPanel promoTitle={promoTitle} description={description} />
-        <div className="h-72 w-72 bg-red-500">
-          immagine uomo/donna/bambino ecc
-        </div>
+
+        <LastModelPanel
+          shoesModel="Pegasus 40"
+          promoTitle={promoTitle}
+          description={description}
+        />
+
+        <Image
+          className="w-screen mb-10"
+          height={200}
+          width={200}
+          alt="NikePegasusUomo"
+          src="https://nqxbbqcnglvcblwkqilb.supabase.co/storage/v1/object/public/foto/pegasusUomoPromo.png"
+        />
 
         <div className="pb-8 space-y-2">
           <p className=" px-4 pt-12 text-2xl ">Trend della settimana</p>

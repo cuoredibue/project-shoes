@@ -1,22 +1,15 @@
 import { Inter } from "next/font/google";
 import { createClient } from "@supabase/supabase-js";
-import Image from "next/image";
-
 //components
 import { airMaxPulse } from "../newModels/shoes";
 import ImageCarousel from "../components/imagesCarousel";
-import logo from "../Images/nike.jpg";
 import HeaderNavBar from "../components/headerNavbar";
 import PromoCarousel from "../components/promoCarouselTopBar";
 import LastModelPanel from "../components/lastModelPanel";
 import ProductsCarousel from "../components/productsCarousel";
 import FooterComponent from "../components/footerComponent";
 import { useEffect, useState } from "react";
-import { error } from "console";
-import { Category } from "@mui/icons-material";
-import { type } from "os";
 const inter = Inter({ subsets: ["latin"] });
-
 export const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || "",
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
@@ -24,6 +17,7 @@ export const supabase = createClient(
 
 export default function Home() {
   // const [allShoes, setAllShoes] = useState<any>([]);
+  const [shoePromoComponent, setShoePromoComponent] = useState<any[]>([]);
   const [newModels, setNewModels] = useState<any[]>([]);
   const [bestSeller, setBestSeller] = useState<any[]>([]);
   const [sneakers, setSneakers] = useState<any[]>([]);
@@ -101,13 +95,28 @@ export default function Home() {
     setSpecialty();
   }, []);
 
+  // const fetchPromoShoes = () => {
+  //   const nikeAirMaxPuse = newModels.filter((shoe) => {
+  //     return shoe.model === "Air Max Pulse";
+  //   });
+  //   setShoePromoComponent(nikeAirMaxPuse[0]);
+  // };
+
+  // useEffect(() => {
+  //   fetchPromoShoes();
+  // }, []);
+
   return (
     <div className=" bg-white">
       <div className="sticky top-0 z-20">
         <HeaderNavBar />
       </div>
       <PromoCarousel />
-      <LastModelPanel promoTitle={promoTitle} description={description} />
+      <LastModelPanel
+        shoesModel="Air Max Pulse"
+        promoTitle={promoTitle}
+        description={description}
+      />
       <ImageCarousel />
       <div className="py-6 space-y-2">
         <p className="pl-4 pt-12 text-2xl ">Novità</p>

@@ -70,7 +70,7 @@ const AddToCart = () => {
             <div key={index}>
               <div
                 style={{ backgroundImage: `url(${image})` }}
-                className="snap-center h-[32rem] bg-top bg-cover w-screen "
+                className="snap-center h-[28rem] bg-top bg-cover w-screen "
               ></div>
             </div>
           );
