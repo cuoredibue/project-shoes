@@ -8,16 +8,39 @@ import { supabase } from "..";
 
 const ShoesModels = () => {
   const router = useRouter();
-  const [initialQuery, setInitialQuery] = useState(router.query);
-  const [allShoes, setAllShoes] = useState([]);
-  const [typeOfShoe, setTypeOfShoe] = useState();
-  const { gender, title } = router.query;
+  const [initialQuery, setInitialQuery] = useState<any>(router.query);
+  const [allShoes, setAllShoes] = useState<any[]>([]);
+  const [typeOfShoe, setTypeOfShoe] = useState("");
+  const { gender, title, prova } = router.query;
+
+  const setSupabaseFilterParams = () => {
+    {
+      title === "BestSeller" && setTypeOfShoe("specialty");
+    }
+    {
+      title === "Novità" && setTypeOfShoe("specialty");
+    }
+    {
+      title === "Running" && setTypeOfShoe("type");
+    }
+    {
+      title === "Sneakers" && setTypeOfShoe("type");
+    }
+    {
+      gender === "Kids" && setTypeOfShoe("type");
+    }
+  };
+
+  useEffect(() => {
+    setSupabaseFilterParams();
+  }, []);
 
   const fetchData = async () => {
     const { data, error } = await supabase
       .from("scarpe")
       .select()
-      .eq("gender", gender);
+      .eq("gender", gender)
+      .eq(typeOfShoe, title);
 
     if (data) {
       setAllShoes(data);
@@ -39,6 +62,7 @@ const ShoesModels = () => {
       <p className="font-medium text-lg w-full bg-white sticky top-0 p-2">
         {`${title}-${gender}`}
       </p>
+
       <div className="grid gap-x-2 grid-cols-2">
         {allShoes.map((shoe, index) => {
           const {
@@ -70,6 +94,7 @@ const ShoesModels = () => {
           );
         })}
       </div>
+
       <FooterComponent />
     </div>
   );

@@ -8,7 +8,12 @@ const ProductsPageSubMenu = (props) => {
       <Link
         href={{
           pathname: "/shoesModels/fullList",
-          query: { title: category1, gender },
+          query: {
+            title: category1,
+            gender,
+            specialty: "specialty",
+            type: "type",
+          },
         }}
       >
         {category1}
@@ -16,7 +21,12 @@ const ProductsPageSubMenu = (props) => {
       <Link
         href={{
           pathname: "/shoesModels/fullList",
-          query: { title: category2, gender },
+          query: {
+            title: category2,
+            gender,
+            specialty: "specialty",
+            type: "type",
+          },
         }}
       >
         {category2}
@@ -24,7 +34,12 @@ const ProductsPageSubMenu = (props) => {
       <Link
         href={{
           pathname: "/shoesModels/fullList",
-          query: { title: category3, gender },
+          query: {
+            title: category3,
+            gender,
+            specialty: "specialty",
+            type: "type",
+          },
         }}
       >
         {category3}
@@ -32,7 +47,12 @@ const ProductsPageSubMenu = (props) => {
       <Link
         href={{
           pathname: "/shoesModels/fullList",
-          query: { title: category4, gender },
+          query: {
+            title: category4,
+            gender,
+            specialty: "specialty",
+            type: "type",
+          },
         }}
       >
         {category4}
@@ -40,7 +60,12 @@ const ProductsPageSubMenu = (props) => {
       <Link
         href={{
           pathname: "/shoesModels/fullList",
-          query: { title: category5, gender },
+          query: {
+            title: category5,
+            gender,
+            specialty: "specialty",
+            type: "type",
+          },
         }}
         className="whitespace-nowrap"
       >

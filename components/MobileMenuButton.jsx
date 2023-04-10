@@ -82,11 +82,7 @@ const MobileMenuButton = () => {
                             pathname: "/newShoes/all",
                             query: {
                               title: "Nuovi Arrivi Nike",
-                              category1: "Uomo",
-                              category2: "Donna",
-                              category3: "Running",
-                              category4: "Snekers",
-                              category5: "Tutte le scarpe",
+                              specialty: "specialty",
                             },
                           }}
                           className="flex justify-between cursor-pointer"
@@ -149,24 +145,6 @@ const MobileMenuButton = () => {
                           className="flex justify-between cursor-pointer"
                         >
                           <p>Bambini</p>
-                          <button>
-                            <ArrowForwardIosIcon />
-                          </button>
-                        </Link>
-                        <Link
-                          href={{
-                            pathname: "/products/buySomething",
-                            query: {
-                              title: "Kids",
-                              category1: "Ragazzi",
-                              category2: "Calcio",
-                              category3: "Basket",
-                              category4: "PrimiPassi",
-                            },
-                          }}
-                          className="flex justify-between cursor-pointer"
-                        >
-                          <p>Outlet</p>
                           <button>
                             <ArrowForwardIosIcon />
                           </button>
