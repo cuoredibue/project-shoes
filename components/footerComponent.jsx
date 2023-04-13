@@ -24,7 +24,7 @@ const FooterComponent = () => {
             {(whichMenuIsOpen !== 1 && (
               <div className="md:grid">
                 <div className="hidden md:grid space-y-3 text-sm text-gray-500 pt-4">
-                  <p>Stato dell'ordine</p>
+                  <p>Stato ordine</p>
                   <p>Spedizione e consegna</p>
                   <p>Resi</p>
                   <p>Opzioni di Pagamento</p>
@@ -55,7 +55,7 @@ const FooterComponent = () => {
           </div>
           {whichMenuIsOpen === 1 && (
             <div className="animate-[enterFromTop_200ms] space-y-3 text-sm text-gray-500 ">
-              <p>Stato dell'ordine</p>
+              <p>Stato ordine</p>
               <p>Spedizione e consegna</p>
               <p>Resi</p>
               <p>Opzioni di Pagamento</p>
@@ -68,7 +68,7 @@ const FooterComponent = () => {
             {(whichMenuIsOpen !== 2 && (
               <div className="md:grid">
                 <div className="hidden md:grid space-y-3 text-sm text-gray-500 pt-4">
-                  <p>Stato dell'ordine</p>
+                  <p>Stato ordine</p>
                   <p>Spedizione e consegna</p>
                   <p>Resi</p>
                   <p>Opzioni di Pagamento</p>
@@ -110,7 +110,7 @@ const FooterComponent = () => {
             {(whichMenuIsOpen !== 3 && (
               <div className="md:grid">
                 <div className="hidden md:grid space-y-3 text-sm text-gray-500 pt-4">
-                  <p>Stato dell'ordine</p>
+                  <p>Stato ordine</p>
                   <p>Spedizione e consegna</p>
                   <p>Resi</p>
                   <p>Opzioni di Pagamento</p>
