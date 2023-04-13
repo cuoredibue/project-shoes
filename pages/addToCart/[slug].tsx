@@ -3,19 +3,21 @@ import PromoCarousel from "@/components/promoCarouselTopBar";
 import FooterComponent from "@/components/footerComponent";
 import BottomMenuExtraInfo from "../../components/addToCardBottomInfo";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import { error } from "console";
 import { supabase } from "..";
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
+
+// components
+import AddToCartPanelToCheckout from "../../components/addToCartPanelToCheckout";
+import SizeTable from "../../components/sizeTable";
+import AddToCartShoeCard from "../../components/AddToCartShoeCard";
 
 const AddToCart = () => {
   const router = useRouter();
   const {
     model,
     gender,
-    type,
     price,
+    type,
     img_url,
     specialty,
     img2_url,
@@ -26,11 +28,12 @@ const AddToCart = () => {
 
   const imagesList = [img_url, img2_url, img3_url, img4_url];
   const [sizeSelected, setSizeSelected] = useState(null);
-  const [notification, setNotification] = useState(null);
+  const [sizeMissed, setSizeMissed] = useState(false);
+  const [checkoutPanel, setCheckoutPanel] = useState(false);
 
   const addShoesToCart = async () => {
     if (!sizeSelected) {
-      console.log("seleziona prima la taglia");
+      setSizeMissed(true);
       return;
     }
     const { data, error } = await supabase
@@ -45,62 +48,54 @@ const AddToCart = () => {
       })
       .select();
     if (data) {
-      console.log("aggiunto al carrello");
+      setSizeMissed(false);
+      handleClick();
     }
     if (error) {
       console.log(error);
     }
   };
 
+  const handleClick = () => {
+    setCheckoutPanel(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
+      setCheckoutPanel(false);
+    }, 5000);
+  };
+
   return (
     <div>
+      <AddToCartPanelToCheckout
+        gender={gender}
+        model={model}
+        type={type}
+        sizeSelected={sizeSelected}
+        price={price}
+        checkoutPanel={checkoutPanel}
+        img_url={img_url}
+      />
+
       <div className="sticky top-0 z-20">
         <HeaderNavBar />
       </div>
       <PromoCarousel />
-      <div className="space-y-2 p-5 font-medium">
-        <p className="text-orange-600">{specialty}</p>
-        <h2 className="text-2xl">{model}</h2>
-        <p>Scarpa-{gender}</p>
-        <p>{`${price} €`}</p>
-      </div>
-      <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
-        {imagesList.map((image, index) => {
-          return (
-            <div key={index}>
-              <div
-                style={{ backgroundImage: `url(${image})` }}
-                className="snap-center h-[28rem] bg-top bg-cover w-screen "
-              ></div>
-            </div>
-          );
-        })}
-      </div>
-      <div className=" flex text-center justify-center mt-5 ">
-        {" "}
-        <p>Seleziona la taglia/misura</p>
-      </div>
-      {availableSizes && (
-        <div className="grid grid-cols-3 p-5 gap-2 ">
-          {availableSizes.map((size, index) => {
-            return (
-              <button
-                onClick={() => {
-                  setSizeSelected(size);
-                }}
-                key={index}
-                className={
-                  (sizeSelected === size &&
-                    "h-12 w-30 bg-white border border-gray-800 rounded") ||
-                  "h-12 w-30 bg-white border border-gray-200 rounded"
-                }
-              >
-                EU {size}
-              </button>
-            );
-          })}
-        </div>
-      )}
+
+      <AddToCartShoeCard
+        specialty={specialty}
+        model={model}
+        gender={gender}
+        price={price}
+        imagesList={imagesList}
+      />
+
+      <SizeTable
+        availableSizes={availableSizes}
+        setSizeSelected={setSizeSelected}
+        sizeSelected={sizeSelected}
+        setSizeMissed={setSizeMissed}
+        sizeMissed={sizeMissed}
+      />
 
       <div className="p-5 space-y-4">
         <button
@@ -121,11 +116,3 @@ const AddToCart = () => {
   );
 };
 export default AddToCart;
-
-{
-  //alternativa image next-js
-  /* <div key={index} className=" space-y-4 pb-2 snap-center">
-              <div className=" bg-stone-100 sm:h-[30rem] h-[29rem] w-[23.5rem] sm:w-[24rem] ">
-                <Image src={image} width={400} height={400} alt="shoes" />
-              </div> */
-}

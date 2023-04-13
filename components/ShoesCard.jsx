@@ -32,10 +32,9 @@ const ShoesCard = (props) => {
         },
       }}
     >
-      <div className="bg-gray-100 h-[14rem] ">
-        <Image src={img_url} width={800} height={800} alt={model} />
-      </div>
-      <div className="text-sm space-y-1 pt-2 pb-4">
+      <Image src={img_url} width={300} height={300} alt={model} />
+
+      <div className="text-sm space-y-1 pl-2 pt-2 pb-4">
         <p className="font-medium">{model}</p>
         <p className="text-gray-400">
           {type}-{gender}

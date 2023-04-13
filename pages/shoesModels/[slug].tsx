@@ -59,8 +59,8 @@ const ShoesModels = () => {
     <div>
       <HeaderNavBar />
       <PromoCarousel />
-      <p className="font-medium text-lg w-full bg-white sticky top-0 p-2">
-        {`${title}-${gender}`}
+      <p className="font-medium text-lg w-full bg-white sticky top-0 p-4">
+        {`${title} ${gender}`}
       </p>
 
       <div className="grid gap-x-2 grid-cols-2">

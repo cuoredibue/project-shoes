@@ -5,13 +5,24 @@ import { useState } from "react";
 const AddToCartBottomInfo = () => {
   const [whichMenuIsOpen, setWhichOpen] = useState(null);
   const buttomMenu = [
-    { title: "Taglia/misura e fit", description: "esempio descrizione", id: 1 },
+    {
+      title: "Taglia/misura e fit",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscingehenderit in voluptate ",
+      id: 1,
+    },
     {
       title: "Spedizioni e resi gratuiti",
-      description: "esempio descrizione",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscingehenderit in voluptate ",
       id: 2,
     },
-    { title: "Realizzazione", description: "esempio descrizione", id: 3 },
+    {
+      title: "Realizzazione",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscingehenderit in voluptate ",
+      id: 3,
+    },
     {
       title: "Recensioni",
 
