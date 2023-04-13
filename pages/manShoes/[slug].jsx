@@ -10,7 +10,7 @@ import LastModelPanel from "@/components/lastModelPanel";
 import { nikePegasusUomo } from "@/newModels/shoes";
 import Image from "next/image";
 const ManShoes = () => {
-  const [allShoes, setAllShoes] = useState<any[]>([]);
+  const [allShoes, setAllShoes] = useState([]);
   const { promoTitle, description } = nikePegasusUomo;
   const router = useRouter();
   const { title, category1, category2, category3, category4, category5 } =

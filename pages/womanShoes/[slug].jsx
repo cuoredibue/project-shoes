@@ -7,11 +7,11 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { supabase } from "..";
 import LastModelPanel from "@/components/lastModelPanel";
-import { airMaxGo } from "@/newModels/shoes";
+import { nikePegasusDonna } from "@/newModels/shoes";
 import Image from "next/image";
-const KidsShoes = () => {
-  const [allShoes, setAllShoes] = useState<any[]>([]);
-  const { promoTitle, description } = airMaxGo;
+const WomanShoes = () => {
+  const [allShoes, setAllShoes] = useState([]);
+  const { promoTitle, description } = nikePegasusDonna;
   const router = useRouter();
   const { title, category1, category2, category3, category4, category5 } =
     router.query;
@@ -20,7 +20,7 @@ const KidsShoes = () => {
     const { data, error } = await supabase
       .from("scarpe")
       .select()
-      .eq("gender", "Kids");
+      .eq("gender", "Donna");
     if (data) {
       setAllShoes(data);
     }
@@ -46,12 +46,12 @@ const KidsShoes = () => {
             category3={category3}
             category4={category4}
             category5={category5}
-            gender="Kids"
+            gender="Donna"
           />
         </div>
 
         <LastModelPanel
-          shoesModel="Air Max Go"
+          shoesModel="Pegasus Trail 4 GORE-TEX"
           promoTitle={promoTitle}
           description={description}
         />
@@ -60,8 +60,8 @@ const KidsShoes = () => {
           className="w-screen mb-10"
           height={800}
           width={800}
-          alt="NikeAirMaxGo"
-          src="https://nqxbbqcnglvcblwkqilb.supabase.co/storage/v1/object/public/foto/promoAirMaxGo.png"
+          alt="nikePegasusDonna"
+          src="https://nqxbbqcnglvcblwkqilb.supabase.co/storage/v1/object/public/foto/promoDonnaPegasus.png"
         />
 
         <div className="pb-8 space-y-2">
@@ -104,4 +104,4 @@ const KidsShoes = () => {
   );
 };
 
-export default KidsShoes;
+export default WomanShoes;

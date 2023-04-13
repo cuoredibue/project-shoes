@@ -16,30 +16,16 @@ export const supabase = createClient(
 );
 
 export default function Home() {
-  // const [allShoes, setAllShoes] = useState<any>([]);
-  const [shoePromoComponent, setShoePromoComponent] = useState<any[]>([]);
-  const [newModels, setNewModels] = useState<any[]>([]);
-  const [bestSeller, setBestSeller] = useState<any[]>([]);
-  const [sneakers, setSneakers] = useState<any[]>([]);
-  const [running, setRunnig] = useState<any[]>([]);
+  const [shoePromoComponent, setShoePromoComponent] = useState([]);
+  const [newModels, setNewModels] = useState([]);
+  const [bestSeller, setBestSeller] = useState([]);
+  const [sneakers, setSneakers] = useState([]);
+  const [running, setRunnig] = useState([]);
   const shoesCategory = ["Sneakers", "Running"];
   const shoesSpecialty = ["Novità", "BestSeller"];
   const { promoTitle, description } = airMaxPulse;
-  // const fetchData = async () => {
-  //   const { data, error } = await supabase.from("scarpe").select();
-  //   if (data) {
-  //     console.log(data);
-  //   }
-  //   if (error) {
-  //     console.log(error);
-  //   }
-  // };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  const filterCategory = async (category: string) => {
+  const filterCategory = async (category) => {
     const { data, error } = await supabase
       .from("scarpe")
       .select()
@@ -67,7 +53,7 @@ export default function Home() {
     setCategory();
   }, []);
 
-  const filterSpecialty = async (specialty: string) => {
+  const filterSpecialty = async (specialty) => {
     const { data, error } = await supabase
       .from("scarpe")
       .select()
@@ -94,17 +80,6 @@ export default function Home() {
   useEffect(() => {
     setSpecialty();
   }, []);
-
-  // const fetchPromoShoes = () => {
-  //   const nikeAirMaxPuse = newModels.filter((shoe) => {
-  //     return shoe.model === "Air Max Pulse";
-  //   });
-  //   setShoePromoComponent(nikeAirMaxPuse[0]);
-  // };
-
-  // useEffect(() => {
-  //   fetchPromoShoes();
-  // }, []);
 
   return (
     <div className=" bg-white">
