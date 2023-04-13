@@ -1,4 +1,4 @@
-const AddToCartShoeCard = (props) => {
+const AddShoeCard = (props) => {
   const { specialty, model, gender, price, imagesList } = props;
   return (
     <>
@@ -24,4 +24,4 @@ const AddToCartShoeCard = (props) => {
   );
 };
 
-export default AddToCartShoeCard;
+export default AddShoeCard;

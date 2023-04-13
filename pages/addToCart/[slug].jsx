@@ -9,7 +9,7 @@ import { useState } from "react";
 // components
 import AddToCartPanelToCheckout from "../../components/addToCartPanelToCheckout";
 import SizeTable from "../../components/sizeTable";
-import AddToCartShoeCard from "../../components/AddToCartShoeCard";
+import AddShoeCart from "../../components/AddShoeCard";
 
 const AddToCart = () => {
   const router = useRouter();
@@ -81,7 +81,7 @@ const AddToCart = () => {
       </div>
       <PromoCarousel />
 
-      <AddToCartShoeCard
+      <AddShoeCart
         specialty={specialty}
         model={model}
         gender={gender}
