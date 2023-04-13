@@ -18,6 +18,20 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/addToCart/[slug].jsx",
+    "pages/index.jsx",
+    "pages/kidsShoes/[slug].jsx",
+    "pages/manShoes/[slug].jsx",
+    "pages/newShoes/[slug].jsx",
+    "pages/products/[slug].jsx",
+    "pages/search/[slug].jsx",
+    "pages/shoesModels/[slug].jsx",
+    "pages/womanShoes/[slug].jsx",
+    "pages/checkout/orderAndPay.jsx"
+  ],
   "exclude": ["node_modules"]
 }
