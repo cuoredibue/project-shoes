@@ -38,8 +38,7 @@ const ManShoes = () => {
       <HeaderNavBar />
       <PromoCarousel />
       <div className="space-y-6 mt-6">
-        <div className="space-y-6 sticky top-0 z-30 pt-6 pb-2 px-4  bg-white">
-          <p className="text-2xl ">{title}</p>
+        <div className="space-y-6 sticky top-0 z-30 pt-4 pb-2 px-4  bg-white">
           <ProductsSubMenu
             category1={category1}
             category2={category2}

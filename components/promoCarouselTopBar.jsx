@@ -19,13 +19,13 @@ const PromoCarousel = () => {
       <div>
         <p className=" font-semibold">FINO AL 30% DI SCONTO</p>
         <p className="text-sm font-light">
-          sono iniziati gli sconti di primavera (link)
+          sono iniziati gli sconti di primavera
         </p>
       </div>
       <div>
         <p className=" font-semibold">CONSEGNA E RESI GRATUITI</p>
         <p className="text-sm font-light">
-          i membri del club, consegna e resi gratuiti (link)
+          i membri del club, consegna e resi gratuiti
         </p>
       </div>
     </Slider>

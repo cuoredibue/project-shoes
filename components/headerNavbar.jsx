@@ -9,6 +9,64 @@ const HeaderNavBar = () => {
       <Link href="/" className="font-bold hover:text-gray-500">
         CHE SCARPA!
       </Link>
+      <div className="hidden font-medium lg:flex space-x-6">
+        <Link
+          href={{
+            pathname: "/newShoes/all",
+            query: {
+              title: "Nuovi Arrivi Nike",
+              specialty: "specialty",
+            },
+          }}
+        >
+          Novità e in evidenza
+        </Link>
+        <Link
+          href={{
+            pathname: "/manShoes/all",
+            query: {
+              title: "Uomo",
+              category1: "BestSeller",
+              category2: "Novità",
+              category3: "Sneakers",
+              category4: "Running",
+              category5: "Tutte le scarpe",
+            },
+          }}
+        >
+          Uomo
+        </Link>
+        <Link
+          href={{
+            pathname: "/womanShoes/all",
+            query: {
+              title: "Donna",
+              category1: "BestSeller",
+              category2: "Novità",
+              category3: "Sneakers",
+              category4: "Running",
+              category5: "Tutte le scarpe",
+            },
+          }}
+        >
+          Donna
+        </Link>
+        <Link
+          href={{
+            pathname: "/kidsShoes/all",
+            query: {
+              title: "Kids",
+              category1: "Ragazzi",
+              category2: "Calcio",
+              category3: "Basket",
+              category4: "PrimiPassi",
+              category5: "Tutte le scarpe",
+            },
+          }}
+        >
+          Kids
+        </Link>
+      </div>
       <div className=" space-x-3">
         <Link
           href={{

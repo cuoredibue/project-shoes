@@ -9,7 +9,7 @@ const FooterComponent = () => {
 
   return (
     <div>
-      <div className=" md:flex md justify-between bg-black text-white text-sm px-4 py-8 md:space-y-0 space-y-8">
+      <div className=" lg:flex  lg:space-x-20 lg:justify-center bg-black text-white text-sm px-4 py-8 lg:space-y-0 space-y-8">
         <div className="space-y-4">
           <p>TROVA UN NEGOZIO</p>
           <p>NIKE JOURNAL</p>
@@ -17,22 +17,21 @@ const FooterComponent = () => {
           <p>FEEDBACK</p>
           <p>CODICI PROMOZIONALI</p>
         </div>
-        <div className="border border-gray-700 md:border-0"></div>
-        <div className="md:flex md:space-x-16 md:space-y-0 space-y-10">
-          <div className="flex md:grid justify-between">
-            <p>HAI BISOGNO DI AIUTO?</p>
+        <div className="border border-gray-700 lg:border-0"></div>
+        <div className="lg:flex lg:space-x-16 lg:space-y-0 space-y-10">
+          <div className="flex lg:grid lg:justify-normal justify-between">
+            <p className="lg:hidden">HAI BISOGNO DI AIUTO?</p>
             {(whichMenuIsOpen !== 1 && (
-              <div className="md:grid">
-                <div className="hidden md:grid space-y-3 text-sm text-gray-500 pt-4">
+              <div>
+                <p className="hidden lg:flex pb-2">HAI BISOGNO DI AIUTO?</p>
+                <div className="hidden lg:grid  space-y-3 text-sm text-gray-500 ">
                   <p>Stato ordine</p>
                   <p>Spedizione e consegna</p>
                   <p>Resi</p>
-                  <p>Opzioni di Pagamento</p>
-                  <p>Contatti</p>
+                  <p>Opzioni di pagamento</p>
                 </div>
-
                 <button
-                  className=" md:hidden"
+                  className=" lg:hidden"
                   onClick={() => {
                     setWhichOpen(1);
                   }}
@@ -63,20 +62,20 @@ const FooterComponent = () => {
               <div className="border border-gray-700"></div>
             </div>
           )}
-          <div className="flex md:grid justify-between">
-            <p>INFORMARZIONI SU NIKE</p>
+          <div className="flex lg:grid lg:justify-items-normal justify-between">
+            <p className="lg:hidden">INFORMARZIONI SU NIKE</p>
             {(whichMenuIsOpen !== 2 && (
-              <div className="md:grid">
-                <div className="hidden md:grid space-y-3 text-sm text-gray-500 pt-4">
-                  <p>Stato ordine</p>
-                  <p>Spedizione e consegna</p>
-                  <p>Resi</p>
-                  <p>Opzioni di Pagamento</p>
-                  <p>Contatti</p>
+              <div>
+                <p className="hidden lg:flex pb-2">INFORMARZIONI SU NIKE</p>
+                <div className="hidden lg:grid lg:justify-start space-y-3 text-sm text-gray-500 ">
+                  <p>News</p>
+                  <p>Lavora con noi</p>
+                  <p>Investitori</p>
+                  <p>Sostenibilità</p>
                 </div>
 
                 <button
-                  className=" md:hidden"
+                  className=" lg:hidden"
                   onClick={() => {
                     setWhichOpen(2);
                   }}
@@ -105,20 +104,20 @@ const FooterComponent = () => {
             </div>
           )}
 
-          <div className="flex md:grid justify-between">
-            <p>UNISCITI A NOI</p>
+          <div className="flex lg:grid justify-between">
+            <p className="lg:hidden">UNISCITI A NOI</p>
             {(whichMenuIsOpen !== 3 && (
-              <div className="md:grid">
-                <div className="hidden md:grid space-y-3 text-sm text-gray-500 pt-4">
-                  <p>Stato ordine</p>
-                  <p>Spedizione e consegna</p>
-                  <p>Resi</p>
-                  <p>Opzioni di Pagamento</p>
-                  <p>Contatti</p>
+              <div>
+                <p className="hidden lg:flex pb-2">UNISCITI A NOI</p>
+                <div className="hidden lg:grid space-y-3 text-sm text-gray-500 ">
+                  <p>Nike app</p>
+                  <p>Nike run club</p>
+                  <p>Nike training club</p>
+                  <p>SNKRS</p>
                 </div>
 
                 <button
-                  className=" md:hidden"
+                  className=" lg:hidden"
                   onClick={() => {
                     setWhichOpen(3);
                   }}
@@ -153,9 +152,9 @@ const FooterComponent = () => {
           <YouTubeIcon />
           <InstagramIcon />
         </div>
-        <p className="md:hidden text-xs text-gray-400">© 2023 Mattia</p>
+        <p className="lg:hidden text-xs text-gray-400">© 2023 Mattia</p>
       </div>
-      <p className="hidden md:flex text-xs text-gray-400 bg-black justify-center">
+      <p className="hidden lg:flex text-xs text-gray-400 bg-black justify-center lg:p-2">
         © 2023 Mattia
       </p>
     </div>

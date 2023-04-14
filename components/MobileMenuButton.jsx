@@ -19,7 +19,7 @@ const MobileMenuButton = () => {
   return (
     <>
       <button
-        className="hover:bg-gray-200 rounded-full h-8 w-8"
+        className="hover:bg-gray-200 lg:hidden rounded-full h-8 w-8"
         type="button"
         onClick={openModal}
       >
