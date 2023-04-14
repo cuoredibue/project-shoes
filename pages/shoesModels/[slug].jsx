@@ -8,7 +8,7 @@ import { supabase } from "..";
 
 const ShoesModels = () => {
   const router = useRouter();
-  const [initialQuery, setInitialQuery] = useState < any > router.query;
+  const [initialQuery, setInitialQuery] = useState(router.query);
   const [allShoes, setAllShoes] = useState([]);
   const [typeOfShoe, setTypeOfShoe] = useState("");
   const { gender, title, prova } = router.query;
