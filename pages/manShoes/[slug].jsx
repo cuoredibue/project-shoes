@@ -54,14 +54,14 @@ const ManShoes = () => {
           promoTitle={promoTitle}
           description={description}
         />
-
-        <Image
-          className="w-screen mb-10"
-          height={200}
-          width={200}
-          alt="NikePegasusUomo"
-          src="https://nqxbbqcnglvcblwkqilb.supabase.co/storage/v1/object/public/foto/pegasusUomoPromo.png"
-        />
+        <div className="w-screen justify-center flex">
+          <Image
+            height={1200}
+            width={1200}
+            alt="NikePegasusUomo"
+            src="https://nqxbbqcnglvcblwkqilb.supabase.co/storage/v1/object/public/foto/pegasusUomoPromo.png"
+          />
+        </div>
 
         <div className="pb-8 space-y-2">
           <p className=" px-4 pt-12 text-2xl ">Trend della settimana</p>

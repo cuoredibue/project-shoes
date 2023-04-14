@@ -54,15 +54,15 @@ const KidsShoes = () => {
           promoTitle={promoTitle}
           description={description}
         />
-
-        <Image
-          className="w-screen mb-10"
-          height={800}
-          width={800}
-          alt="NikeAirMaxGo"
-          src="https://nqxbbqcnglvcblwkqilb.supabase.co/storage/v1/object/public/foto/promoAirMaxGo.png"
-        />
-
+        <div className="w-screen justify-center flex">
+          <Image
+            className=" mb-10"
+            height={1200}
+            width={1200}
+            alt="NikeAirMaxGo"
+            src="https://nqxbbqcnglvcblwkqilb.supabase.co/storage/v1/object/public/foto/promoAirMaxGo.png"
+          />
+        </div>
         <div className="pb-8 space-y-2">
           <p className=" px-4 pt-12 text-2xl ">Trend della settimana</p>
           <div className="flex overflow-auto space-x-3 snap-x snap-mandatory">
