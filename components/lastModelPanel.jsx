@@ -57,7 +57,7 @@ const LastModelPanel = (props) => {
           },
         }}
       >
-        <button className="bg-black rounded-full text-white px-6 mt-6 py-2">
+        <button className="bg-black hover:bg-gray-500 rounded-full text-white px-6 mt-6 py-2">
           Acquista
         </button>
       </Link>

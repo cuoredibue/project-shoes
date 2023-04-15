@@ -59,11 +59,11 @@ const ShoesModels = () => {
     <div>
       <HeaderNavBar />
       <PromoCarousel />
-      <p className="font-medium text-lg w-full bg-white sticky top-0 p-4">
+      <p className="font-medium 2xl:text-center text-lg w-full bg-white sticky top-0 p-4">
         {`${title} ${gender}`}
       </p>
 
-      <div className="grid gap-x-2 grid-cols-2">
+      <div className="grid gap-x-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:px-96">
         {allShoes.map((shoe, index) => {
           const {
             model,

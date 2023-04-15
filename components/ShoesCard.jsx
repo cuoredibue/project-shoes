@@ -32,9 +32,9 @@ const ShoesCard = (props) => {
         },
       }}
     >
-      <Image src={img_url} width={300} height={300} alt={model} />
+      <Image src={img_url} width={600} height={600} alt={model} />
 
-      <div className="text-sm space-y-1 pl-2 pt-2 pb-4">
+      <div className="text-sm sm:text-base space-y-1 pl-2 pt-2 pb-8">
         <p className="font-medium">{model}</p>
         <p className="text-gray-400">
           {type}-{gender}

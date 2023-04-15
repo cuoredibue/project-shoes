@@ -11,6 +11,7 @@ const HeaderNavBar = () => {
       </Link>
       <div className="hidden font-medium lg:flex space-x-6">
         <Link
+          className="hover:underline hover:underline-offset-4"
           href={{
             pathname: "/newShoes/all",
             query: {
@@ -22,6 +23,7 @@ const HeaderNavBar = () => {
           Novità e in evidenza
         </Link>
         <Link
+          className="hover:underline hover:underline-offset-4"
           href={{
             pathname: "/manShoes/all",
             query: {
@@ -37,6 +39,7 @@ const HeaderNavBar = () => {
           Uomo
         </Link>
         <Link
+          className="hover:underline hover:underline-offset-4"
           href={{
             pathname: "/womanShoes/all",
             query: {
@@ -52,6 +55,7 @@ const HeaderNavBar = () => {
           Donna
         </Link>
         <Link
+          className="hover:underline hover:underline-offset-4"
           href={{
             pathname: "/kidsShoes/all",
             query: {

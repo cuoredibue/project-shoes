@@ -8,6 +8,7 @@ const ProductsPageSubMenu = (props) => {
       <h2 className="text-2xl">{gender}</h2>
       <div className=" -ml-2 pl-2 pb-2 lg:pb-0 bg-white flex text-black font-medium space-x-6  overflow-x-auto">
         <Link
+          className="hover:text-gray-500"
           href={{
             pathname: "/shoesModels/fullList",
             query: {
@@ -21,6 +22,7 @@ const ProductsPageSubMenu = (props) => {
           {category1}
         </Link>
         <Link
+          className="hover:text-gray-500"
           href={{
             pathname: "/shoesModels/fullList",
             query: {
@@ -34,6 +36,7 @@ const ProductsPageSubMenu = (props) => {
           {category2}
         </Link>
         <Link
+          className="hover:text-gray-500"
           href={{
             pathname: "/shoesModels/fullList",
             query: {
@@ -47,6 +50,7 @@ const ProductsPageSubMenu = (props) => {
           {category3}
         </Link>
         <Link
+          className="hover:text-gray-500"
           href={{
             pathname: "/shoesModels/fullList",
             query: {
@@ -69,7 +73,7 @@ const ProductsPageSubMenu = (props) => {
               type: "type",
             },
           }}
-          className="whitespace-nowrap"
+          className="whitespace-nowrap hover:text-gray-500"
         >
           {category5}
         </Link>

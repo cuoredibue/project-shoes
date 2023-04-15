@@ -3,23 +3,35 @@ import ClearIcon from "@mui/icons-material/Clear";
 import Link from "next/link";
 import Image from "next/image";
 const AddToCartPanelToCheckout = (props) => {
-  const { checkoutPanel, model, type, sizeSelected, price, gender, img_url } =
-    props;
+  const {
+    setCheckoutPanel,
+    checkoutPanel,
+    model,
+    type,
+    sizeSelected,
+    price,
+    gender,
+    img_url,
+  } = props;
   return (
     <div
       className={
         (checkoutPanel === true &&
-          "z-40 fixed top-0 right-0 bg-black/60 w-screen h-screen") ||
+          "z-40 lg:flex lg:justify-end  fixed top-0 right-0 bg-black/60  w-screen h-screen") ||
         "hidden"
       }
     >
-      <div className="space-y-6 bg-white p-4">
+      <div className="space-y-6 lg:w-1/4 animate-[enterFromTop_200ms] bg-white p-4">
         <div className="flex justify-between">
           <div className="flex space-x-1">
             <CheckCircleIcon className="text-green-500 " />
             <p>Aggiunto al carrello</p>
           </div>
-          <button>
+          <button
+            onClick={() => {
+              setCheckoutPanel(false);
+            }}
+          >
             <ClearIcon className="text-gray-400" />
           </button>
         </div>

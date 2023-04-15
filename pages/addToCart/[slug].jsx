@@ -73,6 +73,7 @@ const AddToCart = () => {
         sizeSelected={sizeSelected}
         price={price}
         checkoutPanel={checkoutPanel}
+        setCheckoutPanel={setCheckoutPanel}
         img_url={img_url}
       />
 
@@ -80,37 +81,48 @@ const AddToCart = () => {
         <HeaderNavBar />
       </div>
       <PromoCarousel />
+      <div className="lg:grid lg:grid-cols-3 lg:gap-6 lg:p-10">
+        <div className="col-span-2 ">
+          <AddShoeCart
+            specialty={specialty}
+            model={model}
+            gender={gender}
+            price={price}
+            imagesList={imagesList}
+          />
+        </div>
 
-      <AddShoeCart
-        specialty={specialty}
-        model={model}
-        gender={gender}
-        price={price}
-        imagesList={imagesList}
-      />
+        <div>
+          <div className="hidden lg:grid space-y-2 -mt-2 px-5 mx-2 font-medium">
+            <h2 className="text-2xl">{model}</h2>
+            <p>Scarpa {gender}</p>
+            <p>{`${price} €`}</p>
+          </div>
+          <SizeTable
+            availableSizes={availableSizes}
+            setSizeSelected={setSizeSelected}
+            sizeSelected={sizeSelected}
+            setSizeMissed={setSizeMissed}
+            sizeMissed={sizeMissed}
+          />
 
-      <SizeTable
-        availableSizes={availableSizes}
-        setSizeSelected={setSizeSelected}
-        sizeSelected={sizeSelected}
-        setSizeMissed={setSizeMissed}
-        sizeMissed={sizeMissed}
-      />
-
-      <div className="p-5 space-y-4">
-        <button
-          onClick={() => {
-            addShoesToCart();
-          }}
-          className="bg-black text-white w-full h-14 rounded-full"
-        >
-          Aggiungi al carrello
-        </button>
-        <button className="bg-white border border-gray-500  w-full h-14 rounded-full">
-          Aggiungi ai preferiti
-        </button>
+          <div className="p-5 space-y-4">
+            <button
+              onClick={() => {
+                addShoesToCart();
+              }}
+              className="bg-black hover:bg-gray-500 text-white w-full h-14 rounded-full"
+            >
+              Aggiungi al carrello
+            </button>
+            <button className="bg-white border border-gray-500  w-full h-14 rounded-full">
+              Aggiungi ai preferiti
+            </button>
+          </div>
+          <BottomMenuExtraInfo />
+        </div>
       </div>
-      <BottomMenuExtraInfo />
+
       <FooterComponent />
     </div>
   );

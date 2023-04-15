@@ -1,9 +1,13 @@
+import { supabase } from "..";
+import { useEffect, useState } from "react";
+
+// components
+
+import FooterComponent from "@/components/footerComponent";
 import HeaderNavBar from "@/components/headerNavbar";
 import PromoCarousel from "@/components/promoCarouselTopBar";
 import ShoesCard from "@/components/ShoesCard";
-import FooterComponent from "@/components/footerComponent";
-import { supabase } from "..";
-import { useEffect, useState } from "react";
+
 const NewModels = () => {
   const [newModels, setNewModels] = useState([]);
 
@@ -28,10 +32,11 @@ const NewModels = () => {
     <div>
       <HeaderNavBar />
       <PromoCarousel />
-      <p className="font-medium text-lg w-full bg-white sticky top-0 p-4">
+      <p className="font-medium text-lg w-full 2xl:text-center bg-white sticky top-0 p-4">
         Nuovi Arrivi Nike
       </p>
-      <div className="grid gap-x-2 grid-cols-2">
+
+      <div className="grid gap-x-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:px-96">
         {newModels.map((shoe, index) => {
           const {
             model,
