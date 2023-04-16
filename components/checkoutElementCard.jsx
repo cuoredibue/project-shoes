@@ -16,14 +16,14 @@ const CheckoutElementCard = (props) => {
   } = props;
   return (
     <div
-      className="grid grid-cols-4 justify-items-center font-light  py-6 border-t  border-gray-200"
+      className="grid grid-cols-4 space-x-0 font-light  py-6 border-t sm:px-6 px-2 border-gray-200"
       key={index}
     >
-      <div className=" h-[4rem] w-[4rem] mt-1 ">
+      <div className=" h-[4rem] w-[4rem] sm:h-[12rem] sm:w-[12rem]  lg:h-[6rem] lg:w-[6rem] xl:h[8rem] xl:w[8rem]  mt-1  ">
         <Image src={img_url} width={150} height={150} alt="shoes" />
       </div>
 
-      <div className="col-span-2 space-y-1.5">
+      <div className="col-span-2  space-y-1.5">
         <p className="font-medium ">{model}</p>
         <p className="text-gray-500">Scarpa-{gender}</p>
 
@@ -61,7 +61,7 @@ const CheckoutElementCard = (props) => {
         </div>
       </div>
 
-      <div className="-mr-2">{price} €</div>
+      <div className=" text-right">{price} €</div>
     </div>
   );
 };

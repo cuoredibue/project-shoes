@@ -57,36 +57,48 @@ const OrderAndPay = () => {
   return (
     <div>
       <HeaderNavBar />
-      <CheckoutTopBar totalToPay={totalToPay} shoesList={shoesList} />
-      <div className="p-2">
-        {shoesList.map((item, index) => {
-          const { model, price, gender, size, img_url, availableSizes, id } =
-            item;
-          return (
-            <CheckoutElementCard
-              key={index}
-              model={model}
-              price={price}
-              gender={gender}
-              size={size}
-              img_url={img_url}
-              availableSizes={availableSizes}
-              modifiedSize={modifiedSize}
-              index={index}
-              removeShoe={removeShoe}
-              id={id}
-            />
-          );
-        })}
-
-        <CheckoutBottomBar totalToPay={totalToPay} />
+      <div className="lg:grid lg:grid-cols-2 xl:grid-cols-5 2xl:grid-cols-7">
+        <div className="xl:col-start-2 xl:col-span-2 2xl:col-start-3">
+          <CheckoutTopBar totalToPay={totalToPay} shoesList={shoesList} />
+          <div className="p-2">
+            {shoesList.map((item, index) => {
+              const {
+                model,
+                price,
+                gender,
+                size,
+                img_url,
+                availableSizes,
+                id,
+              } = item;
+              return (
+                <CheckoutElementCard
+                  key={index}
+                  model={model}
+                  price={price}
+                  gender={gender}
+                  size={size}
+                  img_url={img_url}
+                  availableSizes={availableSizes}
+                  modifiedSize={modifiedSize}
+                  index={index}
+                  removeShoe={removeShoe}
+                  id={id}
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div>
+          <CheckoutBottomBar totalToPay={totalToPay} />
+        </div>
+        <div className=" lg:hidden p-4 lg:px-8 lg:py-0 bg-white sticky bottom-0">
+          <button className="bg-black w-full text-white h-14 rounded-full ">
+            Vai al pagamento
+          </button>
+        </div>
       </div>
       <FooterComponent />
-      <div className="p-4 bg-white sticky bottom-0">
-        <button className="bg-black w-full text-white h-14 rounded-full ">
-          Vai al pagamento
-        </button>
-      </div>
     </div>
   );
 };

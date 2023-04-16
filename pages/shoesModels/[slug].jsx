@@ -62,37 +62,38 @@ const ShoesModels = () => {
       <p className="font-medium 2xl:text-center text-lg w-full bg-white sticky top-0 p-4">
         {`${title} ${gender}`}
       </p>
-
-      <div className="grid gap-x-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:px-96">
-        {allShoes.map((shoe, index) => {
-          const {
-            model,
-            gender,
-            type,
-            price,
-            img_url,
-            img2_url,
-            img3_url,
-            img4_url,
-            specialty,
-            availableSizes,
-          } = shoe;
-          return (
-            <ShoesCard
-              key={index}
-              model={model}
-              gender={gender}
-              type={type}
-              price={price}
-              img_url={img_url}
-              specialty={specialty}
-              img2_url={img2_url}
-              img3_url={img3_url}
-              img4_url={img4_url}
-              availableSizes={availableSizes}
-            />
-          );
-        })}
+      <div className="2xl:grid 2xl:grid-cols-7 ">
+        <div className="grid gap-x-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:col-start-3 2xl:col-span-3">
+          {allShoes.map((shoe, index) => {
+            const {
+              model,
+              gender,
+              type,
+              price,
+              img_url,
+              img2_url,
+              img3_url,
+              img4_url,
+              specialty,
+              availableSizes,
+            } = shoe;
+            return (
+              <ShoesCard
+                key={index}
+                model={model}
+                gender={gender}
+                type={type}
+                price={price}
+                img_url={img_url}
+                specialty={specialty}
+                img2_url={img2_url}
+                img3_url={img3_url}
+                img4_url={img4_url}
+                availableSizes={availableSizes}
+              />
+            );
+          })}
+        </div>
       </div>
 
       <FooterComponent />
