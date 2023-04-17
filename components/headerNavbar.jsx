@@ -2,8 +2,12 @@ import Link from "next/link";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import MobileMenuButton from "../components/MobileMenuButton";
+import SearchPanel from "../components/SearchPanel";
+import { useState } from "react";
 
 const HeaderNavBar = () => {
+  const [searchPanelIsActive, setSearchPanelIsActive] = useState(false);
+
   return (
     <div className="  h-14 bg-white flex justify-between items-center px-2 2xl:justify-around">
       <Link href="/" className="font-bold hover:text-gray-500">
@@ -83,16 +87,23 @@ const HeaderNavBar = () => {
           </button>
         </Link>
 
-        <Link
+        {/* <Link
           href={{
             pathname: "/search/findYourArticle",
             query: { title: "find" },
           }}
+        > */}
+        <button
+          onClick={() => setSearchPanelIsActive(true)}
+          className="hover:bg-gray-200 rounded-full h-8 w-8 "
         >
-          <button className="hover:bg-gray-200 rounded-full h-8 w-8 ">
-            <SearchIcon />
-          </button>
-        </Link>
+          <SearchIcon />
+        </button>
+        {/* </Link> */}
+        <SearchPanel
+          searchPanelIsActive={searchPanelIsActive}
+          setSearchPanelIsActive={setSearchPanelIsActive}
+        />
 
         <MobileMenuButton />
       </div>
