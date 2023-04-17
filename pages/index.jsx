@@ -108,6 +108,7 @@ export default function Home() {
               img4_url,
               specialty,
               availableSizes,
+              price_id,
             } = item;
             return (
               <ProductsCarousel
@@ -122,6 +123,7 @@ export default function Home() {
                 img3_url={img3_url}
                 img4_url={img4_url}
                 availableSizes={availableSizes}
+                price_id={price_id}
               />
             );
           })}
@@ -140,6 +142,7 @@ export default function Home() {
               img4_url,
               specialty,
               availableSizes,
+              price_id,
             } = item;
             return (
               <ProductsCarousel
@@ -154,6 +157,7 @@ export default function Home() {
                 img3_url={img3_url}
                 img4_url={img4_url}
                 availableSizes={availableSizes}
+                price_id={price_id}
               />
             );
           })}
@@ -172,6 +176,7 @@ export default function Home() {
               img4_url,
               specialty,
               availableSizes,
+              price_id,
             } = item;
             return (
               <ProductsCarousel
@@ -186,6 +191,7 @@ export default function Home() {
                 img3_url={img3_url}
                 img4_url={img4_url}
                 availableSizes={availableSizes}
+                price_id={price_id}
               />
             );
           })}
@@ -204,6 +210,7 @@ export default function Home() {
               img4_url,
               specialty,
               availableSizes,
+              price_id,
             } = item;
             return (
               <ProductsCarousel
@@ -218,6 +225,7 @@ export default function Home() {
                 img3_url={img3_url}
                 img4_url={img4_url}
                 availableSizes={availableSizes}
+                price_id={price_id}
               />
             );
           })}

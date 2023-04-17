@@ -78,6 +78,7 @@ const WomanShoes = () => {
                 img4_url,
                 specialty,
                 availableSizes,
+                price_id,
               } = item;
               return (
                 <ProductsCarousel
@@ -92,6 +93,7 @@ const WomanShoes = () => {
                   img3_url={img3_url}
                   img4_url={img4_url}
                   availableSizes={availableSizes}
+                  price_id={price_id}
                 />
               );
             })}

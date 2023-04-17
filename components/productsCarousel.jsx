@@ -14,6 +14,7 @@ const ProductsCarousel = (props) => {
     img3_url,
     img4_url,
     availableSizes,
+    price_id,
   } = props;
 
   return (
@@ -31,6 +32,7 @@ const ProductsCarousel = (props) => {
           img3_url,
           img4_url,
           availableSizes,
+          price_id,
         },
       }}
       className="space-y-4 pb-2 pl-4 snap-center"

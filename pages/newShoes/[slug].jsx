@@ -49,6 +49,7 @@ const NewModels = () => {
             img4_url,
             specialty,
             availableSizes,
+            price_id,
           } = shoe;
           return (
             <ShoesCard
@@ -63,6 +64,7 @@ const NewModels = () => {
               img3_url={img3_url}
               img4_url={img4_url}
               availableSizes={availableSizes}
+              price_id={price_id}
             />
           );
         })}

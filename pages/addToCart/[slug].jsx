@@ -24,6 +24,7 @@ const AddToCart = () => {
     img3_url,
     img4_url,
     availableSizes,
+    price_id,
   } = router.query;
 
   const imagesList = [img_url, img2_url, img3_url, img4_url];
@@ -45,6 +46,7 @@ const AddToCart = () => {
         gender,
         size: sizeSelected,
         availableSizes,
+        price_id,
       })
       .select();
     if (data) {

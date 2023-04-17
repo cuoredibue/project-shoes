@@ -1,5 +1,6 @@
 import { supabase } from "..";
 import { useEffect, useState } from "react";
+import { loadStripe } from "@stripe/stripe-js";
 
 //components
 import HeaderNavBar from "@/components/headerNavbar";
@@ -7,10 +8,17 @@ import CheckoutTopBar from "../../components/checkoutTopBar";
 import FooterComponent from "@/components/footerComponent";
 import CheckoutElementCard from "../../components/checkoutElementCard";
 import CheckoutBottomBar from "../../components/checkoutBottomBar";
+import { TurnLeft } from "@mui/icons-material";
+
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+);
 
 const OrderAndPay = () => {
   const [shoesList, setShoesList] = useState([]);
   const [totalToPay, setTotalToPay] = useState(0);
+  const [pageIsLoad, setPageIsLoad] = useState(false);
+  const [checkoutItems, setCheckoutItems] = useState([]);
 
   const fetchData = async () => {
     const { data, error } = await supabase.from("shoesOrder").select();
@@ -20,11 +28,36 @@ const OrderAndPay = () => {
     if (error) {
       console.log(error);
     }
+    setPageIsLoad(true);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    if (query.get("success")) {
+      console.log("Order placed! You will receive an email confirmation.");
+    }
+
+    if (query.get("canceled")) {
+      console.log(
+        "Order canceled -- continue to shop around and checkout when you’re ready."
+      );
+    }
+  }, []);
+
+  const prepareToCheckout = () => {
+    let list = shoesList.map((item) => {
+      return { price: item.price_id, quantity: 1 };
+    });
+
+    setCheckoutItems(list);
+  };
+  useEffect(() => {
+    prepareToCheckout();
+  }, [pageIsLoad]);
 
   const calculateTotalToPay = () => {
     const prices = shoesList.map((item) => {
@@ -90,13 +123,27 @@ const OrderAndPay = () => {
           </div>
         </div>
         <div>
-          <CheckoutBottomBar totalToPay={totalToPay} />
+          <CheckoutBottomBar
+            totalToPay={totalToPay}
+            checkoutItems={checkoutItems}
+          />
         </div>
-        <div className=" lg:hidden p-4 lg:px-8 lg:py-0 bg-white sticky bottom-0">
-          <button className="bg-black w-full text-white h-14 rounded-full ">
-            Vai al pagamento
-          </button>
-        </div>
+        <form action="/api/checkoutSession" method="POST">
+          <div className=" lg:hidden p-4 lg:px-8 lg:py-0 bg-white sticky bottom-0">
+            <input
+              type="hidden"
+              name="obj"
+              value={JSON.stringify(checkoutItems)}
+            />
+            <button
+              type="submit"
+              role="link"
+              className="bg-black w-full text-white h-14 rounded-full "
+            >
+              Vai al pagamento
+            </button>
+          </div>
+        </form>
       </div>
       <FooterComponent />
     </div>

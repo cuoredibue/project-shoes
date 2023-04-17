@@ -11,7 +11,7 @@ const ShoesModels = () => {
   const [initialQuery, setInitialQuery] = useState(router.query);
   const [allShoes, setAllShoes] = useState([]);
   const [typeOfShoe, setTypeOfShoe] = useState("");
-  const { gender, title, prova } = router.query;
+  const { gender, title } = router.query;
 
   const setSupabaseFilterParams = () => {
     {
@@ -28,6 +28,9 @@ const ShoesModels = () => {
     }
     {
       gender === "Kids" && setTypeOfShoe("type");
+    }
+    {
+      title === "Tutte le scarpe" && setTypeOfShoe("");
     }
   };
 
@@ -76,6 +79,7 @@ const ShoesModels = () => {
               img4_url,
               specialty,
               availableSizes,
+              price_id,
             } = shoe;
             return (
               <ShoesCard
@@ -90,6 +94,7 @@ const ShoesModels = () => {
                 img3_url={img3_url}
                 img4_url={img4_url}
                 availableSizes={availableSizes}
+                price_id={price_id}
               />
             );
           })}

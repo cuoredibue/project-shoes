@@ -13,6 +13,7 @@ const ShoesCard = (props) => {
     img4_url,
     specialty,
     availableSizes,
+    price_id,
   } = props;
   return (
     <Link
@@ -29,6 +30,7 @@ const ShoesCard = (props) => {
           img4_url,
           specialty,
           availableSizes,
+          price_id,
         },
       }}
     >

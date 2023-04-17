@@ -14,7 +14,6 @@ const AddShoeCard = (props) => {
         {imagesList.map((image, index) => {
           return (
             <Image
-              loading="eager"
               key={index}
               alt="shoes"
               width={800}

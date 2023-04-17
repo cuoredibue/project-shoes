@@ -16,6 +16,7 @@ const LastModelPanel = (props) => {
     img4_url,
     specialty,
     availableSizes,
+    price_id,
   } = promoShoe;
 
   const fetchData = async () => {
@@ -54,6 +55,7 @@ const LastModelPanel = (props) => {
             img4_url,
             specialty,
             availableSizes,
+            price_id,
           },
         }}
       >
