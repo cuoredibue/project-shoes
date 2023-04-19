@@ -17,22 +17,24 @@ const CheckoutBottomBar = (props) => {
         <p className="font-light">Totale</p>
         <p className="font-semibold">{totalToPay} €</p>
       </div>
-      <form action="/api/checkoutSession" method="POST">
-        <div className="hidden lg:flex lg:relative p-4 lg:px-8 lg:py-0 xl:px-0 bg-white sticky bottom-0">
-          <input
-            type="hidden"
-            name="obj"
-            value={JSON.stringify(checkoutItems)}
-          />
-          <button
-            type="submit"
-            role="link"
-            className="bg-black w-full text-white h-14 rounded-full "
-          >
-            Vai al pagamento
-          </button>
-        </div>
-      </form>
+      {checkoutItems.length > 0 && (
+        <form action="/api/checkoutSession" method="POST">
+          <div className="hidden lg:flex lg:relative p-4 lg:px-8 lg:py-0 xl:px-0 bg-white sticky bottom-0">
+            <input
+              type="hidden"
+              name="obj"
+              value={JSON.stringify(checkoutItems)}
+            />
+            <button
+              type="submit"
+              role="link"
+              className="bg-black w-full text-white h-14 rounded-full "
+            >
+              Vai al pagamento
+            </button>
+          </div>
+        </form>
+      )}
     </div>
   );
 };

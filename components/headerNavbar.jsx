@@ -64,7 +64,7 @@ const HeaderNavBar = () => {
             pathname: "/kidsShoes/all",
             query: {
               title: "Kids",
-              category1: "Ragazzi",
+              category1: "Sneakers",
               category2: "Calcio",
               category3: "Basket",
               category4: "PrimiPassi",
@@ -86,13 +86,6 @@ const HeaderNavBar = () => {
             <ShoppingBagOutlinedIcon />
           </button>
         </Link>
-
-        {/* <Link
-          href={{
-            pathname: "/search/findYourArticle",
-            query: { title: "find" },
-          }}
-        > */}
         <button
           onClick={() => setSearchPanelIsActive(true)}
           className="hover:bg-gray-200 rounded-full h-8 w-8 "

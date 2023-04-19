@@ -25,7 +25,7 @@ const PromoCarousel = () => {
       <div>
         <p className=" font-semibold">CONSEGNA E RESI GRATUITI</p>
         <p className="text-sm font-light">
-          i membri del club, consegna e resi gratuiti
+          per i membri del club, consegna e resi gratuiti
         </p>
       </div>
     </Slider>

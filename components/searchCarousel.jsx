@@ -35,7 +35,7 @@ const SearchCarousel = (props) => {
           price_id,
         },
       }}
-      className="space-y-4 pb-2 pl-4 snap-center"
+      className="space-y-3 pb-2 pl-4 snap-center"
     >
       <div
         onClick={() => {
@@ -45,7 +45,12 @@ const SearchCarousel = (props) => {
       >
         <Image width={400} height={400} src={img_url} alt="shoes" />
       </div>
-      <p className=" font-semibold text-xl">{model}</p>
+      <div className="">
+        <p className=" font-medium truncate">{model}</p>
+        <p className="text-gray-500">
+          {type}-{gender}
+        </p>
+      </div>
     </Link>
   );
 };

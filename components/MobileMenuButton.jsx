@@ -135,7 +135,7 @@ const MobileMenuButton = () => {
                             pathname: "/kidsShoes/all",
                             query: {
                               title: "Kids",
-                              category1: "Ragazzi",
+                              category1: "Sneakers",
                               category2: "Calcio",
                               category3: "Basket",
                               category4: "PrimiPassi",

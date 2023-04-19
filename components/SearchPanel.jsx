@@ -1,6 +1,5 @@
 import { supabase } from "@/pages";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import SearchCarousel from "./../components/searchCarousel";
 
 const SearchPanel = (props) => {
@@ -30,7 +29,8 @@ const SearchPanel = (props) => {
     const value = allShoes.filter((shoe) => {
       return (
         shoe.model.toLowerCase().includes(inputValue) ||
-        shoe.gender.toLowerCase().includes(inputValue)
+        shoe.gender.toLowerCase().includes(inputValue) ||
+        shoe.type.toLowerCase().includes(inputValue)
       );
     });
     if (value.length === 0) {
@@ -64,7 +64,7 @@ const SearchPanel = (props) => {
             onChange={(e) => {
               setInputValue(e.target.value.toLocaleLowerCase());
             }}
-            className="lg:w-1/2 2xl:w-1/3 w-full mr-5 h-10 bg-stone-100 rounded-full"
+            className="lg:w-1/2 2xl:w-1/3 w-full px-2 mr-5 h-10 bg-stone-100 rounded-full"
             placeholder="cerca"
             type="text"
             autoFocus
@@ -72,6 +72,7 @@ const SearchPanel = (props) => {
           <button
             onClick={() => {
               setSearchPanelIsActive(false);
+              setInputValue("");
             }}
             className="text-black hover:text-gray-500"
           >
