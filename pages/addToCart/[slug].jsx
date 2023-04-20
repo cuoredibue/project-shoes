@@ -83,8 +83,8 @@ const AddToCart = () => {
         <HeaderNavBar />
       </div>
       <PromoCarousel />
-      <div className="lg:grid lg:grid-cols-3 lg:gap-6 lg:p-10 2xl:grid-cols-7 ">
-        <div className="col-span-2 2xl:col-start-3">
+      <div className="lg:grid lg:grid-cols-3 lg:gap-6 lg:p-10 2xl:grid-cols-5 ">
+        <div className="col-span-2 2xl:col-start-2">
           <AddShoeCart
             specialty={specialty}
             model={model}

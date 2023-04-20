@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import { createClient } from "@supabase/supabase-js";
 //components
 import { airMaxPulse } from "../newModels/shoes";
-import ImageCarousel from "../components/imagesCarousel";
 import HeaderNavBar from "../components/headerNavbar";
 import PromoCarousel from "../components/promoCarouselTopBar";
 import LastModelPanel from "../components/lastModelPanel";
@@ -92,143 +91,151 @@ export default function Home() {
         promoTitle={promoTitle}
         description={description}
       />
-      <ImageCarousel />
-      <div className="py-6 space-y-2">
-        <p className="pl-4 pt-12 text-2xl ">Novità</p>
-        <div className="flex overflow-auto snap-x snap-mandatory">
-          {newModels.map((item, index) => {
-            const {
-              model,
-              gender,
-              type,
-              price,
-              img_url,
-              img2_url,
-              img3_url,
-              img4_url,
-              specialty,
-              availableSizes,
-              price_id,
-            } = item;
-            return (
-              <ProductsCarousel
-                key={index}
-                model={model}
-                gender={gender}
-                type={type}
-                price={price}
-                img_url={img_url}
-                specialty={specialty}
-                img2_url={img2_url}
-                img3_url={img3_url}
-                img4_url={img4_url}
-                availableSizes={availableSizes}
-                price_id={price_id}
-              />
-            );
-          })}
+      <div className="h-[19rem] sm:h-[32rem] lg:h-[38rem] lg:bg-center  2xl:h-[48rem] 3xl:h-[64rem] 4xl:h-[88rem] bg-center bg-cover w-screen  bg-[url('https://nqxbbqcnglvcblwkqilb.supabase.co/storage/v1/object/public/foto/promoImage3.png')]"></div>
+      <div className="2xl:grid 2xl:grid-cols-11 3xl:grid-cols-9 4xl:grid-cols-5 py-6 mb-10 ">
+        <div className="2xl:col-span-9 2xl:col-start-2 3xl:col-span-7 3xl:col-start-2  4xl:col-span-3 4xl:col-start-2 space-y-2">
+          <p className="pl-4 2xl:pl-0 pt-12 text-2xl ">Novità</p>
+          <div className=" flex overflow-auto 2xl:space-x-4 snap-x snap-mandatory">
+            {newModels.map((item, index) => {
+              const {
+                model,
+                gender,
+                type,
+                price,
+                img_url,
+                img2_url,
+                img3_url,
+                img4_url,
+                specialty,
+                availableSizes,
+                price_id,
+              } = item;
+              return (
+                <ProductsCarousel
+                  key={index}
+                  model={model}
+                  gender={gender}
+                  type={type}
+                  price={price}
+                  img_url={img_url}
+                  specialty={specialty}
+                  img2_url={img2_url}
+                  img3_url={img3_url}
+                  img4_url={img4_url}
+                  availableSizes={availableSizes}
+                  price_id={price_id}
+                />
+              );
+            })}
+          </div>
         </div>
-        <p className="pl-4  pt-12 text-2xl ">Bestseller</p>
-        <div className="flex overflow-auto snap-x snap-mandatory">
-          {bestSeller.map((item, index) => {
-            const {
-              model,
-              gender,
-              type,
-              price,
-              img_url,
-              img2_url,
-              img3_url,
-              img4_url,
-              specialty,
-              availableSizes,
-              price_id,
-            } = item;
-            return (
-              <ProductsCarousel
-                key={index}
-                model={model}
-                gender={gender}
-                type={type}
-                price={price}
-                img_url={img_url}
-                specialty={specialty}
-                img2_url={img2_url}
-                img3_url={img3_url}
-                img4_url={img4_url}
-                availableSizes={availableSizes}
-                price_id={price_id}
-              />
-            );
-          })}
+        <div className="2xl:col-span-9 2xl:col-start-2 3xl:col-span-7 3xl:col-start-2  4xl:col-span-3 4xl:col-start-2 space-y-2">
+          <p className="pl-4 2xl:pl-0 pt-12 text-2xl ">Bestseller</p>
+          <div className="flex overflow-auto snap-x 2xl:space-x-4 snap-mandatory">
+            {bestSeller.map((item, index) => {
+              const {
+                model,
+                gender,
+                type,
+                price,
+                img_url,
+                img2_url,
+                img3_url,
+                img4_url,
+                specialty,
+                availableSizes,
+                price_id,
+              } = item;
+              return (
+                <ProductsCarousel
+                  key={index}
+                  model={model}
+                  gender={gender}
+                  type={type}
+                  price={price}
+                  img_url={img_url}
+                  specialty={specialty}
+                  img2_url={img2_url}
+                  img3_url={img3_url}
+                  img4_url={img4_url}
+                  availableSizes={availableSizes}
+                  price_id={price_id}
+                />
+              );
+            })}
+          </div>
         </div>
-        <p className="pl-4  pt-12 text-2xl ">Sneakers</p>
-        <div className="flex overflow-auto snap-x snap-mandatory">
-          {sneakers.map((item, index) => {
-            const {
-              model,
-              gender,
-              type,
-              price,
-              img_url,
-              img2_url,
-              img3_url,
-              img4_url,
-              specialty,
-              availableSizes,
-              price_id,
-            } = item;
-            return (
-              <ProductsCarousel
-                key={index}
-                model={model}
-                gender={gender}
-                type={type}
-                price={price}
-                img_url={img_url}
-                specialty={specialty}
-                img2_url={img2_url}
-                img3_url={img3_url}
-                img4_url={img4_url}
-                availableSizes={availableSizes}
-                price_id={price_id}
-              />
-            );
-          })}
+        <div className="2xl:col-span-9 2xl:col-start-2 3xl:col-span-7 3xl:col-start-2  4xl:col-span-3 4xl:col-start-2 space-y-2">
+          <p className="pl-4 2xl:pl-0 pt-12 text-2xl ">Sneakers</p>
+          <div className="flex overflow-auto 2xl:space-x-4 snap-x snap-mandatory">
+            {sneakers.map((item, index) => {
+              const {
+                model,
+                gender,
+                type,
+                price,
+                img_url,
+                img2_url,
+                img3_url,
+                img4_url,
+                specialty,
+                availableSizes,
+                price_id,
+              } = item;
+              return (
+                <ProductsCarousel
+                  key={index}
+                  model={model}
+                  gender={gender}
+                  type={type}
+                  price={price}
+                  img_url={img_url}
+                  specialty={specialty}
+                  img2_url={img2_url}
+                  img3_url={img3_url}
+                  img4_url={img4_url}
+                  availableSizes={availableSizes}
+                  price_id={price_id}
+                />
+              );
+            })}
+          </div>
         </div>
-        <p className="pl-4  pt-12 text-2xl ">Running</p>
-        <div className="flex overflow-auto snap-x snap-mandatory">
-          {running.map((item, index) => {
-            const {
-              model,
-              gender,
-              type,
-              price,
-              img_url,
-              img2_url,
-              img3_url,
-              img4_url,
-              specialty,
-              availableSizes,
-              price_id,
-            } = item;
-            return (
-              <ProductsCarousel
-                key={index}
-                model={model}
-                gender={gender}
-                type={type}
-                price={price}
-                img_url={img_url}
-                specialty={specialty}
-                img2_url={img2_url}
-                img3_url={img3_url}
-                img4_url={img4_url}
-                availableSizes={availableSizes}
-                price_id={price_id}
-              />
-            );
-          })}
+        <div className="2xl:col-span-9 2xl:col-start-2 3xl:col-span-7 3xl:col-start-2  4xl:col-span-3 4xl:col-start-2 space-y-2">
+          <p className="pl-4 2xl:pl-0 pt-12 text-2xl ">Running</p>
+          <div className="flex overflow-auto 2xl:space-x-4 snap-x snap-mandatory">
+            {running.map((item, index) => {
+              const {
+                model,
+                gender,
+                type,
+                price,
+                img_url,
+                img2_url,
+                img3_url,
+                img4_url,
+                specialty,
+                availableSizes,
+                price_id,
+              } = item;
+              return (
+                <ProductsCarousel
+                  key={index}
+                  model={model}
+                  gender={gender}
+                  type={type}
+                  price={price}
+                  img_url={img_url}
+                  specialty={specialty}
+                  img2_url={img2_url}
+                  img3_url={img3_url}
+                  img4_url={img4_url}
+                  availableSizes={availableSizes}
+                  price_id={price_id}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
       <FooterComponent />

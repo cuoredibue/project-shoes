@@ -8,7 +8,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        "3xl": "2560px",
+        "4xl": "3840px",
+      },
+    },
     keyframes: {
       enterFromTop: {
         from: { opacity: 0, transform: "translateY(-50px)" },

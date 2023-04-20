@@ -32,7 +32,7 @@ const SizeTable = (props) => {
                 key={index}
                 className={
                   (sizeSelected === size &&
-                    "h-12 w-30 bg-white border border-gray-800 rounded") ||
+                    "h-12 w-30  bg-white border border-gray-800 rounded") ||
                   "h-12 w-30 bg-white border border-gray-200 rounded"
                 }
               >

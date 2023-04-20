@@ -9,7 +9,7 @@ const HeaderNavBar = () => {
   const [searchPanelIsActive, setSearchPanelIsActive] = useState(false);
 
   return (
-    <div className="  h-14 bg-white flex justify-between items-center px-2 2xl:justify-around">
+    <div className="  h-14 bg-white flex justify-between items-center px-2 2xl:px-8 3xl:justify-around">
       <Link href="/" className="font-bold hover:text-gray-500">
         CHE SCARPA!
       </Link>
