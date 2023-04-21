@@ -59,45 +59,47 @@ const ShoesModels = () => {
   }, [initialQuery]);
 
   return (
-    <div>
-      <HeaderNavBar />
-      <PromoCarousel />
-      <p className="font-medium 2xl:text-center text-lg w-full bg-white sticky top-0 p-4">
-        {`${title} ${gender}`}
-      </p>
-      <div className="2xl:grid 2xl:grid-cols-7 ">
-        <div className="grid gap-x-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:col-start-3 2xl:col-span-3">
-          {allShoes.map((shoe, index) => {
-            const {
-              model,
-              gender,
-              type,
-              price,
-              img_url,
-              img2_url,
-              img3_url,
-              img4_url,
-              specialty,
-              availableSizes,
-              price_id,
-            } = shoe;
-            return (
-              <ShoesCard
-                key={index}
-                model={model}
-                gender={gender}
-                type={type}
-                price={price}
-                img_url={img_url}
-                specialty={specialty}
-                img2_url={img2_url}
-                img3_url={img3_url}
-                img4_url={img4_url}
-                availableSizes={availableSizes}
-                price_id={price_id}
-              />
-            );
-          })}
+    <div className="grid grid-cols-1 h-screen place-content-between">
+      <div>
+        <HeaderNavBar />
+        <PromoCarousel />
+        <p className="font-medium 2xl:text-center text-lg w-full bg-white sticky top-0 p-4">
+          {`${title} ${gender}`}
+        </p>
+        <div className="2xl:grid 2xl:grid-cols-7 ">
+          <div className="grid gap-x-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:col-start-3 2xl:col-span-3">
+            {allShoes.map((shoe, index) => {
+              const {
+                model,
+                gender,
+                type,
+                price,
+                img_url,
+                img2_url,
+                img3_url,
+                img4_url,
+                specialty,
+                availableSizes,
+                price_id,
+              } = shoe;
+              return (
+                <ShoesCard
+                  key={index}
+                  model={model}
+                  gender={gender}
+                  type={type}
+                  price={price}
+                  img_url={img_url}
+                  specialty={specialty}
+                  img2_url={img2_url}
+                  img3_url={img3_url}
+                  img4_url={img4_url}
+                  availableSizes={availableSizes}
+                  price_id={price_id}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
 

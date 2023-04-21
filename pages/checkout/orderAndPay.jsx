@@ -90,8 +90,8 @@ const OrderAndPay = () => {
     <div className="grid grid-cols-1 h-screen place-content-between">
       <div>
         <HeaderNavBar />
-        <div className="lg:grid lg:grid-cols-2 xl:grid-cols-5 2xl:grid-cols-7 ">
-          <div className="xl:col-start-2 xl:col-span-2 2xl:col-start-3 ">
+        <div className="lg:grid lg:grid-cols-2 xl:grid-cols-5 2xl:grid-cols-7 4xl:grid-cols-9">
+          <div className="xl:col-start-2 xl:col-span-2 2xl:col-start-3 4xl:col-start-4 4xl:col-span-2 ">
             <CheckoutTopBar totalToPay={totalToPay} shoesList={shoesList} />
             <div className="p-2 ">
               {shoesList.map((item, index) => {
