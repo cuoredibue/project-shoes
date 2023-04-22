@@ -1,7 +1,7 @@
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ProductsCarouselCard from "./productsCarouselCard";
-const ProductsCarousel = (props) => {
+const ShoesCarousel = (props) => {
   const { allShoes } = props;
 
   const slideWidth = 0.8; // 80% della larghezza del contenitore
@@ -90,4 +90,4 @@ const ProductsCarousel = (props) => {
   );
 };
 
-export default ProductsCarousel;
+export default ShoesCarousel;

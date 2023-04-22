@@ -6,7 +6,7 @@ import { airMaxPulse } from "../newModels/shoes";
 import HeaderNavBar from "../components/headerNavbar";
 import PromoCarousel from "../components/promoCarouselTopBar";
 import LastModelPanel from "../components/lastModelPanel";
-import ProductsCarousel from "../components/ProductsCarousel";
+import ShoesCarousel from "../components/shoesCarousel";
 import FooterComponent from "../components/footerComponent";
 
 export const supabase = createClient(
@@ -97,7 +97,7 @@ export default function Home() {
         description={description}
       />
       <div className="h-[19rem] sm:h-[32rem] lg:h-[38rem] lg:bg-center  2xl:h-[48rem] 3xl:h-[64rem] 4xl:h-[88rem] bg-center bg-cover w-screen  bg-[url('https://nqxbbqcnglvcblwkqilb.supabase.co/storage/v1/object/public/foto/promoImage3.png')]" />
-      <ProductsCarousel allShoes={allShoes} />
+      <ShoesCarousel allShoes={allShoes} />
       <FooterComponent />
     </div>
   );
