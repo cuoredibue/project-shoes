@@ -1,10 +1,12 @@
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { supabase } from "..";
+
+//components
 import HeaderNavBar from "@/components/headerNavbar";
 import PromoCarousel from "@/components/promoCarouselTopBar";
 import ShoesCard from "../../components/ShoesCard";
 import FooterComponent from "@/components/footerComponent";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { supabase } from "..";
 
 const ShoesModels = () => {
   const router = useRouter();

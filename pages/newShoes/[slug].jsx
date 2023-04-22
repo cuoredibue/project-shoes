@@ -2,7 +2,6 @@ import { supabase } from "..";
 import { useEffect, useState } from "react";
 
 // components
-
 import FooterComponent from "@/components/footerComponent";
 import HeaderNavBar from "@/components/headerNavbar";
 import PromoCarousel from "@/components/promoCarouselTopBar";
